@@ -26,6 +26,18 @@ class ArchivePage
         return $postType;
     }
 
+    public static function isCustomPostType(): bool
+    {
+        // 今がカスタム投稿タイプかどうか
+        $type = self::postTypeGet();
+
+        if($type !== "" && $type !== "post"){
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * 投稿ページ、またはアーカイブページにいる際、現在の投稿タイプを取得します。カスタム投稿タイプでない投稿であれば、defaultTitleで渡した値を返します。front-page.phpやhome.phpが読み込まれる場合、空文字を返します。
      * @param string $defaultTitle
