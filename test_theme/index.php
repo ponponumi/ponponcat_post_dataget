@@ -22,6 +22,10 @@
                 <td>トップページが「固定ページ」かどうか</td>
                 <td><?php var_dump(\Ponponumi\PonponcatDataget\TopPage::settingIsFixedPage()) ?></td>
             </tr>
+            <tr>
+                <td>ブログのトップページのURL</td>
+                <td><?php var_dump(\Ponponumi\PonponcatDataget\TopPage::postTopPageUrlGet()) ?></td>
+            </tr>
         </tbody>
     </table>
 </body>
