@@ -27,6 +27,10 @@
                 <td>現在の投稿タイプのタイトル</td>
                 <td><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::postTypeTitleGet("ブログ")) ?></td>
             </tr>
+            <tr>
+                <td>全てのカテゴリのURL</td>
+                <td><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::allCategoryUrlGet()) ?></td>
+            </tr>
         </tbody>
     </table>
 </body>
