@@ -23,4 +23,16 @@ class TopPage
         // トップページが「固定ページ」ならtrue、「最新の投稿」ならfalseを返す
         return !self::settingIsNewPost();
     }
+
+    public static function postTopPageUrlGet(): string
+    {
+        // 投稿ページのトップページのURLを取得する
+        if(self::settingIsNewPost()){
+            // 最新の投稿なら
+            return home_url();
+        }else{
+            // 固定ページなら
+            return get_permalink(get_option("page_for_posts"));
+        }
+    }
 }
