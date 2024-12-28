@@ -2,7 +2,7 @@ services:
     wordpress:
         image: wordpress:php8.3-apache
         ports:
-            - "${WP_PORT:-5500}:80"
+            - "${WP_PORT:-5520}:80"
         build:
             context: .
             dockerfile: Dockerfile
@@ -25,7 +25,7 @@ services:
     mysql:
         image: mysql:8.0
         ports:
-            - "${DB_PORT:-5501}:3306"
+            - "${DB_PORT:-5521}:3306"
         environment:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: wordpress
