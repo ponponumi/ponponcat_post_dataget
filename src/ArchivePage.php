@@ -15,6 +15,8 @@ class ArchivePage
         } elseif (is_post_type_archive()) {
             // アーカイブページの場合
             $postType = get_query_var("post_type");
+        } elseif (is_archive()) {
+            $postType = "post";
         }
 
         return $postType;
