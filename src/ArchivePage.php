@@ -4,6 +4,10 @@ namespace Ponponumi\PonponcatPostDataget;
 
 class ArchivePage
 {
+    /**
+     * 投稿ページ、またはアーカイブページにいる際、現在の投稿タイプを取得します。カスタム投稿タイプでない投稿であれば、postを返します。front-page.phpやhome.phpが読み込まれる場合、空文字を返します。
+     * @return string
+     */
     public static function postTypeGet(): string
     {
         // 現在の投稿タイプの名前を取得
