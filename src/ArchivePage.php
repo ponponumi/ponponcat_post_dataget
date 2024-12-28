@@ -53,7 +53,7 @@ class ArchivePage
         $title = "";
         $type = self::postTypeGet();
 
-        if($type !== "" && $type !== "post"){
+        if(self::isCustomPostType()){
             // カスタム投稿タイプであれば
             $data = get_post_type_object($type);
             $title = $data->labels->singular_name;
