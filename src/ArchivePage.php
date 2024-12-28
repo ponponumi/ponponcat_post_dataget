@@ -23,12 +23,16 @@ class ArchivePage
     public static function postTypeTitleGet(string $defaultTitle=""): string
     {
         // 現在の投稿タイプからタイトルを取得する
-        $title = $defaultTitle;
+        $title = "";
         $type = self::postTypeGet();
 
-        if($type !== ""){
+        if($type !== "" && $type !== "post"){
+            // カスタム投稿タイプであれば
             $data = get_post_type_object($type);
             $title = $data->labels->singular_name;
+        }elseif($type === "post"){
+            // 通常の投稿ページであれば
+            $title = $defaultTitle;
         }
 
         return $title;
