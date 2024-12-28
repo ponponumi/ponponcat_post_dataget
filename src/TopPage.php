@@ -32,6 +32,10 @@ class TopPage
         return !self::settingIsNewPost();
     }
 
+    /**
+     * このメソッドでは、投稿ページのトップページのURLを返します。カスタム投稿タイプでは使えません。ご注意下さい。
+     * @return string
+     */
     public static function postTopPageUrlGet(): string
     {
         // 投稿ページのトップページのURLを取得する
