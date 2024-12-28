@@ -26,6 +26,10 @@ class ArchivePage
         return $postType;
     }
 
+    /**
+     * 今がカスタム投稿タイプかどうかを判定します。カスタム投稿タイプの場合はtrue、カスタム投稿タイプでない場合はfalseを返します。
+     * @return bool
+     */
     public static function isCustomPostType(): bool
     {
         // 今がカスタム投稿タイプかどうか
