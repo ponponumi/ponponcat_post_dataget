@@ -14,7 +14,10 @@
             </tr>
         </thead>
         <tbody>
-            <!--  -->
+            <tr>
+                <td>トップページが「最新の投稿」かどうか</td>
+                <td><?php var_dump(\Ponponumi\PonponcatDataget\TopPage::settingIsNewPost()) ?></td>
+            </tr>
         </tbody>
     </table>
 </body>
