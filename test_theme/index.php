@@ -18,6 +18,10 @@
                 <td>トップページが「最新の投稿」かどうか</td>
                 <td><?php var_dump(\Ponponumi\PonponcatDataget\TopPage::settingIsNewPost()) ?></td>
             </tr>
+            <tr>
+                <td>トップページが「固定ページ」かどうか</td>
+                <td><?php var_dump(\Ponponumi\PonponcatDataget\TopPage::settingIsFixedPage()) ?></td>
+            </tr>
         </tbody>
     </table>
 </body>
