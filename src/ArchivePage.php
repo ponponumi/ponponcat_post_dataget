@@ -19,4 +19,23 @@ class ArchivePage
 
         return $postType;
     }
+
+    public static function allCategoryUrlGet(): string
+    {
+        $url = "";
+        $type = self::postTypeGet();
+
+        if($type === "" || $type === "post"){
+            // カスタム投稿タイプでなければ
+            $url = TopPage::postTopPageUrlGet();
+        }else{
+            $url = get_post_type_archive_link($type);
+
+            if(!$url){
+                return "";
+            }
+        }
+
+        return $url;
+    }
 }
