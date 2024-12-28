@@ -110,6 +110,11 @@ class ArchivePage
         }
     }
 
+    /**
+     * カスタム投稿でない場合、投稿ページのカテゴリを取得します。カスタム投稿の場合、現在の投稿タイプのカテゴリを取得します。現在の投稿タイプでカテゴリが使えない場合、空の配列を返します。
+     *
+     * @return array
+     */
     public static function categoriesGet(): array
     {
         // カテゴリ一覧を取得
