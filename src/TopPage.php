@@ -4,6 +4,10 @@ namespace Ponponumi\PonponcatDataget;
 
 class TopPage
 {
+    /**
+     * このメソッドでは、トップページの設定が「最新の投稿」ならtrue、「固定ページ」ならfalseを返します。：
+     * @return bool
+     */
     public static function settingIsNewPost(): bool
     {
         // トップページが「最新の投稿」ならtrue、「固定ページ」ならfalseを返す
