@@ -43,6 +43,7 @@ class ArchivePage
     public static function allCategoryUrlGet(): string
     {
         // 現在の投稿タイプのURLを取得
+        // 現在が投稿ページ、アーカイブページでない場合、無条件で投稿ページのトップURLを取得する
         $url = "";
         $type = self::postTypeGet();
 
