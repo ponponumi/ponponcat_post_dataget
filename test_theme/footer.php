@@ -35,6 +35,12 @@
                 <td>全てのカテゴリのURL</td>
                 <td><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::allCategoryUrlGet()) ?></td>
             </tr>
+            <tr>
+                <td>カテゴリ一覧</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::categoriesGet()) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
