@@ -92,15 +92,16 @@ class ArchivePage
         return $url;
     }
 
-    public static function categorySupportCheck(): bool
+    public static function categorySupportCheck(bool $default=true): bool
     {
-        $type = self::postTypeGet();
-
-        if($type !== ""){
-            $type = "post";
+        if(self::isCustomPostType()){
+            // カスタム投稿の場合
+            $type = self::postTypeGet();
+            return in_array("category", get_object_taxonomies($type));
+        }else{
+            // カスタム投稿以外の場合
+            return $default;
         }
-
-        return in_array("category", get_object_taxonomies($type));
     }
 
     public static function categoriesGet(): array
