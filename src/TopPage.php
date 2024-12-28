@@ -1,6 +1,6 @@
 <?php
 
-namespace Ponponumi\PonponcatDataget;
+namespace Ponponumi\PonponcatPostDataget;
 
 class TopPage
 {
