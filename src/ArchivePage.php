@@ -26,6 +26,11 @@ class ArchivePage
         return $postType;
     }
 
+    /**
+     * 投稿ページ、またはアーカイブページにいる際、現在の投稿タイプを取得します。カスタム投稿タイプでない投稿であれば、defaultTitleで渡した値を返します。front-page.phpやhome.phpが読み込まれる場合、空文字を返します。
+     * @param string $defaultTitle
+     * @return string
+     */
     public static function postTypeTitleGet(string $defaultTitle=""): string
     {
         // 現在の投稿タイプからタイトルを取得する
