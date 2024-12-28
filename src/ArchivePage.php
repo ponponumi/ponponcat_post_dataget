@@ -92,6 +92,12 @@ class ArchivePage
         return $url;
     }
 
+    /**
+     * カスタム投稿の場合、カテゴリをサポート中かどうかを返します。
+     *
+     * @param boolean $default カスタム投稿でない場合、ここで指定した値を返します。デフォルトではtrueです。
+     * @return boolean
+     */
     public static function categorySupportCheck(bool $default=true): bool
     {
         if(self::isCustomPostType()){
