@@ -33,7 +33,7 @@ class TopPage
     }
 
     /**
-     * このメソッドでは、投稿ページのトップページのURLを返します。カスタム投稿タイプでは使えません。ご注意下さい。
+     * このメソッドでは、投稿ページのトップページのURLを返します。カスタム投稿タイプで使う場合は、ArchivePageクラスのallCategoryUrlGetメソッドを使ってください。
      * @return string
      */
     public static function postTopPageUrlGet(): string
