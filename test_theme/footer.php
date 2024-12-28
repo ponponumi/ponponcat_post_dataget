@@ -24,6 +24,10 @@
                 <td><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::postTypeGet()) ?></td>
             </tr>
             <tr>
+                <td>現在がカスタム投稿タイプかどうか</td>
+                <td><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::isCustomPostType()) ?></td>
+            </tr>
+            <tr>
                 <td>現在の投稿タイプのタイトル</td>
                 <td><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::postTypeTitleGet("ブログ")) ?></td>
             </tr>
