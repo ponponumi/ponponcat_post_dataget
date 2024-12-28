@@ -1,0 +1,17 @@
+{
+    "name": "ponponumi/ponponcat_dataget",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Ponponumi\\PonponcatDataget\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ponponumi",
+            "email": "ponponumi@ponponumi.com"
+        }
+    ],
+    "require": {}
+}
