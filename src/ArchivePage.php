@@ -92,6 +92,17 @@ class ArchivePage
         return $url;
     }
 
+    public static function categorySupportCheck(): bool
+    {
+        $type = self::postTypeGet();
+
+        if($type !== ""){
+            $type = "post";
+        }
+
+        return in_array("category", get_object_taxonomies($type));
+    }
+
     public static function categoriesGet(): array
     {
         // カテゴリ一覧を取得
