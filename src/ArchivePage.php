@@ -107,6 +107,13 @@ class ArchivePage
     public static function categoriesGet(): array
     {
         // カテゴリ一覧を取得
+        $check = self::categorySupportCheck();
+
+        if(!$check){
+            // カテゴリがサポートされていない場合
+            return [];
+        }
+
         $result = [];
         $type = self::postTypeGet();
 
