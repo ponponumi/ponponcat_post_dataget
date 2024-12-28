@@ -20,7 +20,7 @@ class ArchivePage
         return $postType;
     }
 
-    public static function isPostTypeTitleGet(string $defaultTitle=""): string
+    public static function postTypeTitleGet(string $defaultTitle=""): string
     {
         // 現在の投稿タイプからタイトルを取得する
         $title = $defaultTitle;
