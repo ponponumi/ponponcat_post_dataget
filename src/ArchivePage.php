@@ -9,7 +9,7 @@ class ArchivePage
         // 現在の投稿タイプの名前を取得
         $postType = "";
 
-        if (is_singular()) {
+        if (is_single()) {
             // 記事ページの場合
             $postType = get_post_type();
         } elseif (is_post_type_archive()) {
