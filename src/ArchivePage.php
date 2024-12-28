@@ -50,6 +50,7 @@ class ArchivePage
             // カスタム投稿タイプでなければ
             $url = TopPage::postTopPageUrlGet();
         }else{
+            // カスタム投稿タイプであれば
             $url = get_post_type_archive_link($type);
 
             if(!$url){
