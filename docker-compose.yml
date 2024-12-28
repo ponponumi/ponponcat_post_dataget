@@ -1,0 +1,44 @@
+services:
+    wordpress:
+        image: wordpress:php8.3-apache
+        ports:
+            - "${WP_PORT:-5500}:80"
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            WORDPRESS_DB_HOST: mysql
+            WORDPRESS_DB_NAME: wordpress
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress
+            WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-0}
+        volumes:
+            - ./test_theme:/var/www/html/wp-content/themes/test_theme
+            - ./html:/var/www/html/
+            - ./vendor:/var/www/html/wp-content/themes/test_theme/vendor
+            - ./src:/var/www/html/wp-content/themes/test_theme/src
+        depends_on:
+            - mysql
+        networks:
+            - wordpress
+
+    mysql:
+        image: mysql:8.0
+        ports:
+            - "${DB_PORT:-5501}:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
+        volumes:
+            - ./db:/var/lib/mysql
+        networks:
+            - wordpress
+
+networks:
+    wordpress:
+        driver: bridge
+
+volumes:
+    db_data:
