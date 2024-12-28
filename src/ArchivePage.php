@@ -20,6 +20,7 @@ class ArchivePage
 
     public static function allCategoryUrlGet(): string
     {
+        // 現在の投稿タイプのURLを取得
         $url = "";
         $type = self::postTypeGet();
 
