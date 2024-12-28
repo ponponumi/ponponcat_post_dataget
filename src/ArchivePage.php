@@ -6,7 +6,7 @@ class ArchivePage
 {
     public static function postTypeGet(string $postType=""): string
     {
-        // 現在の投稿タイプのURLを取得
+        // 現在の投稿タイプの名前を取得
         if (is_singular()) {
             // 記事ページの場合
             $postType = get_post_type();
