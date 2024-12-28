@@ -17,4 +17,10 @@ class TopPage
             return false;
         }
     }
+
+    public static function isFixedPage(): bool
+    {
+        // トップページが「固定ページ」ならtrue、「最新の投稿」ならfalseを返す
+        return !self::isNewPost();
+    }
 }
