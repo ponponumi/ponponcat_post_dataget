@@ -91,4 +91,37 @@ class ArchivePage
 
         return $url;
     }
+
+    public static function categoriesGet(): array
+    {
+        // カテゴリ一覧を取得
+        $result = [];
+        $type = self::postTypeGet();
+
+        if($type !== ""){
+            $type = "post";
+        }
+
+        $categories = get_terms([
+            "taxonomy" => "category",
+            "post_type" => $type,
+            "orderby" => "name",
+            "hide_empty" => false,
+        ]);
+
+        if (!is_wp_error($categories) && !empty($categories)) {
+            foreach ($categories as $category) {
+                $url = get_term_link($category);
+
+                if(!is_wp_error($url)){
+                    $result[] = [
+                        "url" => $url,
+                        "name" => $category->name,
+                    ];
+                }
+            }
+        }
+
+        return $result;
+    }
 }
