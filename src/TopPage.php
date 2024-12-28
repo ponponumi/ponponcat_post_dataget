@@ -22,6 +22,10 @@ class TopPage
         }
     }
 
+    /**
+     * このメソッドでは、トップページの設定が「固定ページ」ならtrue、「最新の投稿」ならfalseを返します。：
+     * @return bool
+     */
     public static function settingIsFixedPage(): bool
     {
         // トップページが「固定ページ」ならtrue、「最新の投稿」ならfalseを返す
