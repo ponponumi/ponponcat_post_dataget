@@ -20,6 +20,20 @@ class ArchivePage
         return $postType;
     }
 
+    public static function isPostTypeTitleGet(string $defaultTitle=""): string
+    {
+        // 現在の投稿タイプからタイトルを取得する
+        $title = $defaultTitle;
+        $type = self::postTypeGet();
+
+        if($type !== ""){
+            $data = get_post_type_object($type);
+            $title = $data->labels->singular_name;
+        }
+
+        return $title;
+    }
+
     public static function allCategoryUrlGet(): string
     {
         // 現在の投稿タイプのURLを取得
