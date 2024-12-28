@@ -49,6 +49,11 @@ class ArchivePage
         return $title;
     }
 
+    /**
+     * 現在の投稿ページ、またはアーカイブページの、全てのカテゴリを表示するURLを返します。カスタム投稿タイプでない場合、トップページが「最新の投稿」の場合はトップページを、「固定ページ」の場合は投稿ページのトップページを、それぞれ返します。
+     *
+     * @return string
+     */
     public static function allCategoryUrlGet(): string
     {
         // 現在の投稿タイプのURLを取得
