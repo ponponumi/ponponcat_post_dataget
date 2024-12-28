@@ -1,5 +1,5 @@
 {
-    "name": "ponponumi/ponponcat_dataget",
+    "name": "ponponumi/ponponcat_post_dataget",
     "type": "library",
     "license": "GPL-2.0-or-later",
     "autoload": {
