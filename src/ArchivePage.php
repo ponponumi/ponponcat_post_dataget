@@ -232,6 +232,11 @@ class ArchivePage
         return $dates;
     }
 
+    /**
+     * 指定した投稿タイプのアーカイブが、有効かどうかを返します。有効の場合はtrue、無効の場合はfalseを返します。アーカイブが見つからない場合はfalseを返します。
+     * @param string $type
+     * @return bool
+     */
     public static function postTypeArchive(string $type): bool
     {
         $typeObject = get_post_type_object($type);
