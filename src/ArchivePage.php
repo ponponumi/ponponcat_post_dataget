@@ -214,10 +214,6 @@ class ArchivePage
 
     public static function postTypeArchive(string $type): bool
     {
-        if(!self::isCustomPostType()){
-            return true;
-        }
-
         $typeObject = get_post_type_object($type);
 
         if (!$typeObject) {
@@ -229,6 +225,10 @@ class ArchivePage
 
     public static function nowPostTypeArchive(): bool
     {
+        if(!self::isCustomPostType()){
+            return true;
+        }
+
         $type = self::postTypeGet();
         return self::postTypeArchive($type);
     }
