@@ -211,4 +211,15 @@ class ArchivePage
 
         return $dates;
     }
+
+    public static function postTypeArchive(string $type): bool
+    {
+        $typeObject = get_post_type_object($type);
+
+        if (!$typeObject) {
+            return false;
+        }
+
+        return $typeObject->has_archive;
+    }
 }
