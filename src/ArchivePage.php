@@ -248,6 +248,12 @@ class ArchivePage
         return $typeObject->has_archive;
     }
 
+    /**
+     * 現在の投稿タイプのアーカイブが、有効かどうかを返します。有効の場合はtrue、無効の場合はfalseを返します。アーカイブが見つからない場合はfalseを返します。カスタム投稿タイプでない場合は、notCustomPostTypeで指定した値を返します。
+     *
+     * @param boolean $notCustomPostType カスタム投稿タイプでない場合は、ここで指定した値を返します。デフォルトでは「true」です。
+     * @return boolean
+     */
     public static function nowPostTypeArchive(bool $notCustomPostType=true): bool
     {
         if(!self::isCustomPostType()){
