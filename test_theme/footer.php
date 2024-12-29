@@ -63,6 +63,12 @@
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::datesGet()) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>現在の投稿タイプにアーカイブページがあるかどうか</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPostTypeArchive()) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
