@@ -45,7 +45,7 @@ use Ponponumi\PonponcatPostDataget\TopPage;
 
 以下のようなメソッドがございます。
 
-### settingIsNewPost
+### settingIsNewPost(): boolean
 
 このメソッドは、トップページの設定が「最新の投稿」ならtrue、「固定ページ」ならfalseを返します。
 
@@ -56,7 +56,7 @@ $topIsNewPost = TopPage::settingIsNewPost();
 var_dump($topIsNewPost);    // トップページの設定が「最新の投稿」ならtrue、「固定ページ」ならfalse
 ```
 
-### settingIsFixedPage
+### settingIsFixedPage(): boolean
 
 このメソッドは、トップページの設定が「固定ページ」ならtrue、「最新の投稿」ならfalseを返します。
 
@@ -69,7 +69,7 @@ $topIsFixedPage = TopPage::settingIsFixedPage();
 var_dump($topIsFixedPage);  // トップページの設定が「固定ページ」ならtrue、「最新の投稿」ならfalse
 ```
 
-### postTopPageUrlGet
+### postTopPageUrlGet(): string
 
 このメソッドは、このメソッドでは、投稿ページのトップページのURLを返します。
 
