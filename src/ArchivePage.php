@@ -154,4 +154,35 @@ class ArchivePage
 
         return $result;
     }
+
+    public static function yearsGet(): array
+    {
+        // 現在の投稿タイプの投稿年アーカイブのデータを取得
+        $years = [];
+        $type = self::postTypeGet();
+
+        if($type !== ""){
+            $type = "post";
+        }
+
+        $query = new \WP_Query([
+            "post_type" => $type,
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "fields" => "ids",
+        ]);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $years[] = get_the_date("Y");
+            }
+            wp_reset_postdata();
+        }
+
+        $years = array_unique($years);
+        rsort($years);
+
+        return $years;
+    }
 }
