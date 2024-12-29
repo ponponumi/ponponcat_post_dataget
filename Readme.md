@@ -24,6 +24,17 @@ composer require ponponumi/ponponcat_post_dataget
 * WordPressのプラグインを使う
 * プラグインを自作する
 
+## パッケージの読み込みについて
+
+functions.phpに、次のように入力してください。(autoload.phpへのパスは、必要に応じて修正してください)
+
+```php
+require_once __DIR__ . "/vendor/autoload.php";
+
+use Ponponumi\PonponcatPostDataget\ArchivePage;
+use Ponponumi\PonponcatPostDataget\TopPage;
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
