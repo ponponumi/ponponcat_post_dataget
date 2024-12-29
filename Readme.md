@@ -69,6 +69,24 @@ $topIsFixedPage = TopPage::settingIsFixedPage();
 var_dump($topIsFixedPage);  // トップページの設定が「固定ページ」ならtrue、「最新の投稿」ならfalse
 ```
 
+### postTopPageUrlGet
+
+このメソッドは、このメソッドでは、投稿ページのトップページのURLを返します。
+
+例えば、WordPressが`https://example.com`というドメインで動いている場合、次のようになります。
+
+| トップページの設定 | 戻り値 |
+| ---- | ---- |
+| 最新の投稿 | `https://example.com/` |
+| 固定ページ(投稿ページのURLスラッグが「blog」) | `https://example.com/blog/` |
+
+引数はありません。
+
+```php
+$postTopPage = TopPage::postTopPageUrlGet();
+var_dump($postTopPage);     // 戻り値は上記の表のようになります
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
