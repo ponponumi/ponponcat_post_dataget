@@ -56,6 +56,19 @@ $topIsNewPost = TopPage::settingIsNewPost();
 var_dump($topIsNewPost);    // トップページの設定が「最新の投稿」ならtrue、「固定ページ」ならfalse
 ```
 
+### settingIsFixedPage
+
+このメソッドは、トップページの設定が「固定ページ」ならtrue、「最新の投稿」ならfalseを返します。
+
+簡単にいえば、settingIsNewPostメソッドとは、逆の動きをします。
+
+引数はありません。
+
+```php
+$topIsFixedPage = TopPage::settingIsFixedPage();
+var_dump($topIsFixedPage);  // トップページの設定が「固定ページ」ならtrue、「最新の投稿」ならfalse
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
