@@ -155,6 +155,36 @@ class ArchivePage
         return $result;
     }
 
+    private static function dateDataGetSystem(string $postType, string $dateType="Y"): array
+    {
+        // 日付のアーカイブデータを取得するコアメソッド
+        $result = [];
+
+        if($postType !== ""){
+            $postType = "post";
+        }
+
+        $query = new \WP_Query([
+            "post_type" => $postType,
+            "post_status" => "publish",
+            "posts_per_page" => -1,
+            "fields" => "ids",
+        ]);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $result[] = get_the_date($dateType);
+            }
+            wp_reset_postdata();
+        }
+
+        $result = array_unique($result);
+        rsort($result);
+
+        return $result;
+    }
+
     public static function yearsGet(): array
     {
         // 現在の投稿タイプの投稿年アーカイブのデータを取得
