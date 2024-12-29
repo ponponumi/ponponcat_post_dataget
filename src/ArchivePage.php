@@ -193,4 +193,13 @@ class ArchivePage
 
         return $years;
     }
+
+    public static function monthsGet(): array
+    {
+        // 現在の投稿タイプの投稿月アーカイブのデータを取得
+        $type = self::postTypeGet();
+        $months = self::dateDataGetSystem($type, "Y/n");
+
+        return $months;
+    }
 }
