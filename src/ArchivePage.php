@@ -222,4 +222,10 @@ class ArchivePage
 
         return $typeObject->has_archive;
     }
+
+    public static function nowPostTypeArchive(): bool
+    {
+        $type = self::postTypeGet();
+        return self::postTypeArchive($type);
+    }
 }
