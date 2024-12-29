@@ -160,7 +160,7 @@ class ArchivePage
         // 日付のアーカイブデータを取得するコアメソッド
         $result = [];
 
-        if($postType !== ""){
+        if($postType === ""){
             $postType = "post";
         }
 
