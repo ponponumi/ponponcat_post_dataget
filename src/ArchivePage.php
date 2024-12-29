@@ -223,10 +223,10 @@ class ArchivePage
         return $typeObject->has_archive;
     }
 
-    public static function nowPostTypeArchive(): bool
+    public static function nowPostTypeArchive(bool $notCustomPostType=true): bool
     {
         if(!self::isCustomPostType()){
-            return true;
+            return $notCustomPostType;
         }
 
         $type = self::postTypeGet();
