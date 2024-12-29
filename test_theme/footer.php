@@ -52,15 +52,33 @@
                 </td>
             </tr>
             <tr>
+                <td>投稿年アーカイブ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::yearsUrlGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
                 <td>投稿月アーカイブ</td>
                 <td>
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::monthsGet()) ?></pre>
                 </td>
             </tr>
             <tr>
+                <td>投稿月アーカイブ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::monthsUrlGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
                 <td>投稿日アーカイブ</td>
                 <td>
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::datesGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>投稿日アーカイブ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::datesUrlGet()) ?></pre>
                 </td>
             </tr>
             <tr>
