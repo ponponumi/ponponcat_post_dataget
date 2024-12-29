@@ -11,3 +11,9 @@
 ```bash
 composer require ponponumi/ponponcat_post_dataget
 ```
+
+## ライセンスについて
+
+このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
+
+このパッケージを使い、商用利用、再配布、改変は可能ですが、ソースコードを非公開のまま配布したり、互換性のないライセンス(MITなど)を適用させたりすることはできません。
