@@ -22,6 +22,7 @@ composer require ponponumi/ponponcat_post_dataget
 
 * テーマに、カスタム投稿のパーマリンクを追加するPHPコードを記述する
 * WordPressのプラグインを使う
+* プラグインを自作する
 
 ## ライセンスについて
 
