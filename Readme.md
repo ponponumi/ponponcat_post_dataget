@@ -45,6 +45,17 @@ use Ponponumi\PonponcatPostDataget\TopPage;
 
 以下のようなメソッドがございます。
 
+### settingIsNewPost
+
+このメソッドは、トップページの設定が「最新の投稿」ならtrue、「固定ページ」ならfalseを返します。
+
+引数はありません。
+
+```php
+$topIsNewPost = TopPage::settingIsNewPost();
+var_dump($topIsNewPost);    // トップページの設定が「最新の投稿」ならtrue、「固定ページ」ならfalse
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
