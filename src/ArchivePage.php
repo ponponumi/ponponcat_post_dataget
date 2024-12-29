@@ -233,7 +233,7 @@ class ArchivePage
     }
 
     /**
-     * 指定した投稿タイプのアーカイブが、有効かどうかを返します。有効の場合はtrue、無効の場合はfalseを返します。アーカイブが見つからない場合はfalseを返します。
+     * 指定した投稿タイプのアーカイブが、有効かどうかを返します。有効の場合はtrue、無効の場合はfalseを返します。アーカイブが無効の場合はfalseを返します。
      * @param string $type ここには、投稿タイプを指定してください。
      * @return bool
      */
@@ -249,7 +249,7 @@ class ArchivePage
     }
 
     /**
-     * 現在の投稿タイプのアーカイブが、有効かどうかを返します。有効の場合はtrue、無効の場合はfalseを返します。アーカイブが見つからない場合はfalseを返します。カスタム投稿タイプでない場合は、notCustomPostTypeで指定した値を返します。
+     * 現在の投稿タイプのアーカイブが、有効かどうかを返します。有効の場合はtrue、無効の場合はfalseを返します。アーカイブが無効の場合はfalseを返します。カスタム投稿タイプでない場合は、notCustomPostTypeで指定した値を返します。
      *
      * @param boolean $notCustomPostType カスタム投稿タイプでない場合は、ここで指定した値を返します。デフォルトでは「true」です。
      * @return boolean
