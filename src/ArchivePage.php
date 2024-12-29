@@ -328,4 +328,11 @@ class ArchivePage
         $type = self::postTypeGet();
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
+
+    public static function datesUrlGet(string $format="Y/n/j"): array
+    {
+        $data = self::datesGet();
+        $type = self::postTypeGet();
+        return self::dateArchiveUrlGetSystem($data, $type, $format);
+    }
 }
