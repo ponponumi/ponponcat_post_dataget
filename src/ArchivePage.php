@@ -202,4 +202,13 @@ class ArchivePage
 
         return $months;
     }
+
+    public static function datesGet(): array
+    {
+        // 現在の投稿タイプの投稿日アーカイブのデータを取得
+        $type = self::postTypeGet();
+        $dates = self::dateDataGetSystem($type, "Y/n/j");
+
+        return $dates;
+    }
 }
