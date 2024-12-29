@@ -314,4 +314,11 @@ class ArchivePage
 
         return $result;
     }
+
+    public static function yearsUrlGet(string $format="Y"): array
+    {
+        $data = self::yearsGet();
+        $type = self::postTypeGet();
+        return self::dateArchiveUrlGetSystem($data, $type, $format);
+    }
 }
