@@ -155,6 +155,13 @@ class ArchivePage
         return $result;
     }
 
+    /**
+     * 日付のアーカイブデータの一覧を取得するコアメソッドです。
+     *
+     * @param string $postType ここには、投稿タイプを渡してください。
+     * @param string $dateType ここには、日付のフォーマットを渡して下さい。
+     * @return array
+     */
     private static function dateDataGetSystem(string $postType, string $dateType="Y"): array
     {
         // 日付のアーカイブデータを取得するコアメソッド
