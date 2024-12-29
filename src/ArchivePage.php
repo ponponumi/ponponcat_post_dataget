@@ -214,7 +214,7 @@ class ArchivePage
 
     public static function postTypeArchive(string $type): bool
     {
-        if($type === "post"){
+        if(!self::isCustomPostType()){
             return true;
         }
 
