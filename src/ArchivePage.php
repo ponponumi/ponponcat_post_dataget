@@ -192,6 +192,10 @@ class ArchivePage
         return $result;
     }
 
+    /**
+     * 現在の投稿タイプの投稿年一覧を取得します。現在が投稿関係のページではない場合、通常の投稿タイプの投稿年一覧を返します。
+     * @return array
+     */
     public static function yearsGet(): array
     {
         // 現在の投稿タイプの投稿年アーカイブのデータを取得
