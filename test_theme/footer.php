@@ -45,6 +45,12 @@
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::categoriesGet()) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>投稿年アーカイブ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::yearsGet()) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
