@@ -321,4 +321,11 @@ class ArchivePage
         $type = self::postTypeGet();
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
+
+    public static function monthsUrlGet(string $format="Y/n"): array
+    {
+        $data = self::monthsGet();
+        $type = self::postTypeGet();
+        return self::dateArchiveUrlGetSystem($data, $type, $format);
+    }
 }
