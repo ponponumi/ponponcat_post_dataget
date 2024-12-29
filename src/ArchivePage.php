@@ -263,4 +263,55 @@ class ArchivePage
         $type = self::postTypeGet();
         return self::postTypeArchive($type);
     }
+
+    private static function dateArchiveUrlGetSystem(array $dateList, string $postType="", string $newFormat="Y/n/j"): array
+    {
+        $result = [];
+
+        if($postType === ""){
+            $postType = "post";
+        }
+
+        foreach($dateList as $date){
+            $url = "";
+            $dateData = explode("/",$date);
+
+            if($postType === "post"){
+                // 通常の投稿なら
+                if(count($dateData) === 1){
+                    // 年なら
+                    $url = get_year_link(intval($dateData[0]));
+                    $date .= "/1/1";
+                }elseif(count($dateData) === 2){
+                    // 月なら
+                    $url = get_month_link(intval($dateData[0]), intval($dateData[1]));
+                    $date .= "/1";
+                }elseif(count($dateData) === 3){
+                    // 日なら
+                    $url = get_day_link(intval($dateData[0]), intval($dateData[1]), intval($dateData[2]));
+                }
+            }else{
+                // カスタム投稿なら
+                if(count($dateData) === 1){
+                    // 年なら
+                    $url = add_query_arg("post_type", $postType, get_year_link(intval($dateData[0])));
+                    $date .= "/1/1";
+                }elseif(count($dateData) === 2){
+                    // 月なら
+                    $url = add_query_arg("post_type", $postType, get_month_link(intval($dateData[0]), intval($dateData[1])));
+                    $date .= "/1";
+                }elseif(count($dateData) === 3){
+                    // 日なら
+                    $url = add_query_arg("post_type", $postType, get_day_link(intval($dateData[0]), intval($dateData[1]), intval($dateData[2])));
+                }
+            }
+
+            $result[] = [
+                "url" => $url,
+                "name" => date($newFormat,strtotime($date)),
+            ];
+        }
+
+        return $result;
+    }
 }
