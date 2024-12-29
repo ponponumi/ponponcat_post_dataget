@@ -41,6 +41,10 @@ use Ponponumi\PonponcatPostDataget\TopPage;
 
 そのため、インスタンスを生成する必要はありません。
 
+## TopPageクラスについて
+
+以下のようなメソッドがございます。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
