@@ -214,6 +214,10 @@ class ArchivePage
 
     public static function postTypeArchive(string $type): bool
     {
+        if($type === "post"){
+            return true;
+        }
+
         $typeObject = get_post_type_object($type);
 
         if (!$typeObject) {
