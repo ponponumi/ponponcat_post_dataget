@@ -35,6 +35,12 @@ use Ponponumi\PonponcatPostDataget\ArchivePage;
 use Ponponumi\PonponcatPostDataget\TopPage;
 ```
 
+## メソッドの種類について
+
+このライブラリのメソッドは、全て静的メソッドとして制作されています。
+
+そのため、インスタンスを生成する必要はありません。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
