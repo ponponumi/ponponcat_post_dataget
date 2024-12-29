@@ -194,7 +194,7 @@ class ArchivePage
 
     /**
      * 現在の投稿タイプの投稿年一覧を取得します。現在が投稿関係のページではない場合、通常の投稿タイプの投稿年一覧を返します。
-     * @return array
+     * @return array ["2024","2023"] のような形式で返します。
      */
     public static function yearsGet(): array
     {
