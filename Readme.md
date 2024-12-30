@@ -127,6 +127,32 @@ $isCustomPostType = ArchivePage::isCustomPostType();
 var_dump($isCustomPostType);    // カスタム投稿タイプの投稿ページ、アーカイブページならtrue、それ以外はfalse
 ```
 
+### postTypeTitleGet(string $defaultTitle=""): string
+
+このメソッドでは、現在の投稿タイプのタイトルを取得します。
+
+カスタム投稿タイプでない投稿であれば、defaultTitleで渡した値を返します。
+
+トップページや固定ページであれば、空の文字列を返します。
+
+#### 引数について
+
+##### string $defaultTitle
+
+通常の投稿タイプの場合、表示する文字列を渡してください。
+
+#### サンプルコード
+
+```php
+$postTypeTitle = ArchivePage::postTypeTitleGet("ブログ");
+var_dump($postTypeTitle);   // カスタム投稿タイプの場合はその投稿タイプの名前、通常の投稿タイプならこの場合は「ブログ」
+```
+
+```php
+$postTypeTitle = ArchivePage::postTypeTitleGet("BLOG");
+var_dump($postTypeTitle);   // カスタム投稿タイプの場合はその投稿タイプの名前、通常の投稿タイプならこの場合は「BLOG」
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
