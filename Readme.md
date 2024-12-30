@@ -91,6 +91,10 @@ $postTopPage = TopPage::postTopPageUrlGet();
 var_dump($postTopPage);     // 戻り値は上記の表のようになります
 ```
 
+## ArchivePageクラスについて
+
+以下のようなメソッドがございます。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
