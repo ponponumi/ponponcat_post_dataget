@@ -196,6 +196,29 @@ $allCategoryUrl = ArchivePage::allCategoryUrlGet();
 var_dump($allCategoryUrl);  // 戻り値は上記の表のようになります
 ```
 
+### categorySupportCheck(bool $default=true): bool
+
+カスタム投稿の場合、カテゴリをサポート中かどうかを返します。
+
+カテゴリをサポート中の場合はtrue、サポート中でない場合はfalseを返します。
+
+カスタム投稿以外の場合、defaultに渡した値(省略した場合はtrue)を返します。
+
+#### 引数について
+
+##### bool $default
+
+カスタム投稿以外の場合、返す値を渡して下さい。
+
+省略した場合はtrueになります。
+
+#### サンプルコード
+
+```php
+$categorySupportCheck = ArchivePage::categorySupportCheck(true);
+var_dump($categorySupportCheck);    // カテゴリをサポート中の場合はtrue、サポート中でない場合はfalse、カスタム投稿以外の場合はdefaultの値
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
