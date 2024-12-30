@@ -312,6 +312,21 @@ $result = [
 ];
 ```
 
+### postTypeArchive(string $type): bool
+
+指定した投稿タイプに、アーカイブページがあるかどうかを調べます。
+
+アーカイブページがある場合はtrue、ない場合はfalseを返します。
+
+投稿タイプが見つからない場合はfalseを返します。
+
+#### サンプルコード
+
+```php
+$check = ArchivePage::postTypeArchive("event");
+var_dump($check);   // 「event」という投稿タイプのアーカイブページが有効ならtrue。無効の場合、投稿タイプがない場合はfalse。
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
