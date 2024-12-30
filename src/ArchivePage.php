@@ -82,6 +82,11 @@ class ArchivePage
             $url = TopPage::postTopPageUrlGet();
         }else{
             // カスタム投稿タイプであれば
+            if(!self::postTypeArchive($type)){
+                // カスタム投稿タイプが見つからない場合、カスタム投稿タイプのアーカイブが無効の場合
+                return "";
+            }
+
             $url = get_post_type_archive_link($type);
 
             if(!$url){
