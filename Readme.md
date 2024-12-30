@@ -219,6 +219,36 @@ $categorySupportCheck = ArchivePage::categorySupportCheck(true);
 var_dump($categorySupportCheck);    // カテゴリをサポート中の場合はtrue、サポート中でない場合はfalse、カスタム投稿以外の場合はdefaultの値
 ```
 
+### categoriesGet(): array
+
+現在の投稿タイプのカテゴリ一覧を返します。
+
+カテゴリがサポートされていないカスタム投稿の場合、空の配列を返します。
+
+引数はありません。
+
+#### サンプルコード
+
+```php
+$categories = ArchivePage::categoriesGet();
+var_dump($categories);  // 以下の配列と同じような形式の配列になります。
+
+$result = [
+    [
+        "url" => "https://example.com/category/php/",
+        "name" => "PHP",
+    ],
+    [
+        "url" => "https://example.com/category/wordpress/",
+        "name" => "wordpress",
+    ],
+    [
+        "url" => "https://example.com/category/uncategorized/",
+        "name" => "未分類",
+    ],
+];
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
