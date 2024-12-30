@@ -95,6 +95,25 @@ var_dump($postTopPage);     // 戻り値は上記の表のようになります
 
 以下のようなメソッドがございます。
 
+### postTypeGet(): string
+
+このメソッドでは、現在の投稿タイプを返します。
+
+なお、「front-page.php」や「home.php」などでは、「`post`」ではなく「**空の文字列**」を返しますので、ご注意ください。
+
+| 投稿タイプ | 戻り値 |
+| ---- | ---- |
+| 通常の投稿タイプ | `post` |
+| カスタム投稿タイプ(投稿タイプ名が「event_info」) | `event_info` |
+| カスタム投稿タイプ(投稿タイプ名が「important」) | `important` |
+
+引数はありません。
+
+```php
+$postType = ArchivePage::postTypeGet();
+var_dump($postType);    // 戻り値は上記の表のようになります
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
