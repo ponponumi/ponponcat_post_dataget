@@ -114,6 +114,19 @@ $postType = ArchivePage::postTypeGet();
 var_dump($postType);    // 戻り値は上記の表のようになります
 ```
 
+### isCustomPostType(): bool
+
+このメソッドでは、現在がカスタム投稿タイプかどうかを返します。
+
+カスタム投稿タイプの投稿ページ、またはアーカイブページの場合はtrue、それ以外はfalseを返します。
+
+引数はありません。
+
+```php
+$isCustomPostType = ArchivePage::isCustomPostType();
+var_dump($isCustomPostType);    // カスタム投稿タイプの投稿ページ、アーカイブページならtrue、それ以外はfalse
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
