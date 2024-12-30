@@ -51,6 +51,8 @@ use Ponponumi\PonponcatPostDataget\TopPage;
 
 引数はありません。
 
+#### サンプルコード
+
 ```php
 $topIsNewPost = TopPage::settingIsNewPost();
 var_dump($topIsNewPost);    // トップページの設定が「最新の投稿」ならtrue、「固定ページ」ならfalse
@@ -63,6 +65,8 @@ var_dump($topIsNewPost);    // トップページの設定が「最新の投稿�
 簡単にいえば、settingIsNewPostメソッドとは、逆の動きをします。
 
 引数はありません。
+
+#### サンプルコード
 
 ```php
 $topIsFixedPage = TopPage::settingIsFixedPage();
@@ -85,6 +89,8 @@ var_dump($topIsFixedPage);  // トップページの設定が「固定ページ�
 | 固定ページ(投稿ページのURLスラッグが「blog」) | `https://example.com/blog/` |
 
 引数はありません。
+
+#### サンプルコード
 
 ```php
 $postTopPage = TopPage::postTopPageUrlGet();
@@ -109,6 +115,8 @@ var_dump($postTopPage);     // 戻り値は上記の表のようになります
 
 引数はありません。
 
+#### サンプルコード
+
 ```php
 $postType = ArchivePage::postTypeGet();
 var_dump($postType);    // 戻り値は上記の表のようになります
@@ -121,6 +129,8 @@ var_dump($postType);    // 戻り値は上記の表のようになります
 カスタム投稿タイプの投稿ページ、またはアーカイブページの場合はtrue、それ以外はfalseを返します。
 
 引数はありません。
+
+#### サンプルコード
 
 ```php
 $isCustomPostType = ArchivePage::isCustomPostType();
