@@ -165,6 +165,37 @@ $postTypeTitle = ArchivePage::postTypeTitleGet("BLOG");
 var_dump($postTypeTitle);   // カスタム投稿タイプの場合はその投稿タイプの名前、通常の投稿タイプならこの場合は「BLOG」
 ```
 
+### allCategoryUrlGet(): string
+
+このメソッドでは、現在の投稿タイプの全てのカテゴリの、記事一覧ページへのURLを返します。
+
+カスタム投稿タイプの場合は、その投稿タイプの記事一覧ページへのURLを返します。
+
+カスタム投稿タイプ以外の場合は、TopPageクラスのpostTypeGetメソッドと同じ動きをします。
+
+引数はありません。
+
+例えば、WordPressが`https://example.com`というドメインで動いている場合、次のようになります。
+
+| 現在のページ | トップページの設定 | 戻り値 |
+| ---- | ---- | ---- |
+| 通常の投稿タイプ | 最新の投稿 | `https://example.com/` 
+| 通常の投稿タイプ | 固定ページ(投稿ページのURLスラッグが「blog」) | `https://example.com/blog/`
+| カスタム投稿タイプ(投稿タイプ名は「event_info」) | どちらでも | `https://example.com/event_info/`
+| 固定ページ | 最新の投稿 | `https://example.com/` 
+| 固定ページ | 固定ページ(投稿ページのURLスラッグが「blog」) | `https://example.com/blog/`
+| トップページ | 最新の投稿 | `https://example.com/` 
+| トップページ | 固定ページ(投稿ページのURLスラッグが「blog」) | `https://example.com/blog/`
+| ホームページ | 最新の投稿 | `https://example.com/` 
+| ホームページ | 固定ページ(投稿ページのURLスラッグが「blog」) | `https://example.com/blog/`
+
+#### サンプルコード
+
+```php
+$allCategoryUrl = ArchivePage::allCategoryUrlGet();
+var_dump($allCategoryUrl);  // 戻り値は上記の表のようになります
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
