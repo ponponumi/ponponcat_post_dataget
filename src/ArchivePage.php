@@ -334,6 +334,7 @@ class ArchivePage
 
     /**
      * 現在の投稿タイプの投稿月一覧に、URLを含めて取得します。現在が投稿関係のページではない場合、通常の投稿タイプの投稿月一覧を返します。
+     * @param string $format ここには、日付のフォーマットを入力してください。省略した場合は「Y/n」になります。
      * @return array
      */
     public static function monthsUrlGet(string $format="Y/n"): array
