@@ -331,6 +331,10 @@ class ArchivePage
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
 
+    /**
+     * 現在の投稿タイプの投稿月一覧に、URLを含めて取得します。現在が投稿関係のページではない場合、通常の投稿タイプの投稿月一覧を返します。
+     * @return array
+     */
     public static function monthsUrlGet(string $format="Y/n"): array
     {
         $data = self::monthsGet();
