@@ -333,6 +333,42 @@ $check = ArchivePage::postTypeArchive("event");
 var_dump($check);   // 「event」という投稿タイプのアーカイブページが有効ならtrue。無効の場合、投稿タイプがない場合はfalse。
 ```
 
+### yearsUrlGet(string $format="Y"): array
+
+現在の投稿タイプの投稿年一覧に、URLを含めて取得します。
+
+現在が投稿関係のページではない場合、通常の投稿タイプの投稿年一覧を返します。
+
+#### 引数について
+
+##### string $format
+
+日付のフォーマットを指定してください。
+
+省略した場合は「Y」になります。
+
+#### サンプルコード
+
+```php
+$years = ArchivePage::yearsUrlGet("Y年");
+var_dump($years);   // 以下の配列と同じような形式の配列になります。
+
+$result = [
+    [
+        "url" => "https://example.com/2024/",
+        "name" => "2024年",
+    ],
+    [
+        "url" => "https://example.com/2023/",
+        "name" => "2023年",
+    ],
+    [
+        "url" => "https://example.com/2022/",
+        "name" => "2022年",
+    ],
+];
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
