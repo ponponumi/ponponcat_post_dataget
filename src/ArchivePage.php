@@ -342,6 +342,11 @@ class ArchivePage
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
 
+
+    /**
+     * 現在の投稿タイプの投稿日一覧に、URLを含めて取得します。現在が投稿関係のページではない場合、通常の投稿タイプの投稿日一覧を返します。
+     * @return array
+     */
     public static function datesUrlGet(string $format="Y/n/j"): array
     {
         $data = self::datesGet();
