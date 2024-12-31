@@ -269,6 +269,13 @@ class ArchivePage
         return self::postTypeArchive($type);
     }
 
+    /**
+     * これは、日付一覧から、アーカイブページのURLを取得するシステムメソッドです。
+     * @param array $dateList ここには、yearsGet、monthsGet、datesGetのいずれかで取得したデータを、渡して下さい。
+     * @param string $postType ここには、投稿タイプを渡して下さい。
+     * @param string $newFormat ここには、画面に表示する日付形式を渡して下さい。
+     * @return array
+     */
     private static function dateArchiveUrlGetSystem(array $dateList, string $postType="", string $newFormat="Y/n/j"): array
     {
         $result = [];
