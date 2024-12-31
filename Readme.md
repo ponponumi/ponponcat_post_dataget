@@ -405,6 +405,42 @@ $result = [
 ];
 ```
 
+### datesUrlGet(string $format="Y/n/j"): array
+
+現在の投稿タイプの投稿日一覧に、URLを含めて取得します。
+
+現在が投稿関係のページではない場合、通常の投稿タイプの投稿日一覧を返します。
+
+#### 引数について
+
+##### string $format
+
+日付のフォーマットを指定してください。
+
+省略した場合は「Y/n/j」になります。
+
+#### サンプルコード
+
+```php
+$dates = ArchivePage::datesUrlGet("Y年n月j日");
+var_dump($dates);   // 以下の配列と同じような形式の配列になります。
+
+$result = [
+    [
+        "url" => "https://example.com/2024/12/12/",
+        "name" => "2024年12月12日",
+    ],
+    [
+        "url" => "https://example.com/2024/11/30/",
+        "name" => "2024年11月30日",
+    ],
+    [
+        "url" => "https://example.com/2024/11/17/",
+        "name" => "2024年11月17日",
+    ],
+];
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
