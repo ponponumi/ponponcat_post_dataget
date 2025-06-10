@@ -111,6 +111,20 @@ class ParentData
 
         if(is_single()){
             // 記事ページであれば
+            $result[] = [
+                "name" => get_the_date($yearFormat),
+                "link" => ArchivePage::nowPageYearArchiveUrlGet(),
+            ];
+
+            $result[] = [
+                "name" => get_the_date($monthFormat),
+                "link" => ArchivePage::nowPageMonthArchiveUrlGet(),
+            ];
+
+            $result[] = [
+                "name" => get_the_date($dayFormat),
+                "link" => ArchivePage::nowPageDateArchiveUrlGet(),
+            ];
         }elseif(is_year()){
             // 年別アーカイブであれば
         }elseif(is_month()){
