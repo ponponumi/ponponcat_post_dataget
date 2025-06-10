@@ -29,4 +29,31 @@ class ParentData
 
         return $result;
     }
+
+    public static function nowPageParentCategoriesGet(int $singleCategoryIndex=0, bool $nowCategoryAdd=true): array
+    {
+        // 現在のページの親カテゴリーを取得
+        // カテゴリー別のアーカイブページ、カテゴリー対応の投稿ページ以外では空の配列を返す
+        $result = [];
+        $categoryObject = null;
+
+        if(ArchivePage::categorySupportCheck() && is_single()){
+            // 現在がカテゴリーがサポートされた記事ページであれば
+            $categories = get_the_category();
+
+            if(!empty($categories)){
+                $categoryObject = $categories[$singleCategoryIndex];
+            }
+
+        }elseif(is_category()){
+            // カテゴリー別アーカイブページであれば
+            $categoryObject = get_queried_object();
+        }
+
+        if($categoryObject !== null){
+            $result = self::parentCategoriesGet($categoryObject, $nowCategoryAdd);
+        }
+
+        return $result;
+    }
 }
