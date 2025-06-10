@@ -57,7 +57,7 @@ class ParentData
         return $result;
     }
 
-    public static function fixedPageParentGet($fixedPageObject, bool $nowPageAdd=false): array
+    public static function fixedPageParentGet(WP_Term $fixedPageObject, bool $nowPageAdd=false): array
     {
         // 固定ページの親ページを取得
         $result = [];
