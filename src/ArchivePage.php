@@ -411,4 +411,9 @@ class ArchivePage
 
         return self::dateArchiveUrlGet($year, $month, $day, $postType, $howFar);
     }
+
+    public static function nowPageMonthArchiveUrlGet(): string
+    {
+        return self::nowPageDateArchiveUrlGet("m");
+    }
 }
