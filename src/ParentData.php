@@ -115,10 +115,18 @@ class ParentData
                 "link" => ArchivePage::nowPageYearArchiveUrlGet(),
             ];
 
+            if($howFar === "y"){
+                return $result;
+            }
+
             $result[] = [
                 "name" => get_the_date($monthFormat),
                 "link" => ArchivePage::nowPageMonthArchiveUrlGet(),
             ];
+
+            if($howFar === "m"){
+                return $result;
+            }
 
             $result[] = [
                 "name" => get_the_date($dayFormat),
