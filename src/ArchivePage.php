@@ -403,6 +403,10 @@ class ArchivePage
     {
         // 現在の記事に対応する日別アーカイブのURLを取得
         // 現在が記事、日別アーカイブ、月別アーカイブ、年別アーカイブでなければ空文字を返す
+        if(!is_day() && !is_month() && !is_year() && !is_single()){
+            return "";
+        }
+
         $year = get_query_var("year");
         $month = get_query_var("monthnum");
         $day = get_query_var("day");
