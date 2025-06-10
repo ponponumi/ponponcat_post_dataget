@@ -128,6 +128,10 @@ class ParentData
             // 年別アーカイブであれば
         }elseif(is_month()){
             // 月別アーカイブであれば
+            $result[] = [
+                "name" => get_the_date($yearFormat),
+                "link" => ArchivePage::nowPageYearArchiveUrlGet(),
+            ];
         }elseif(is_day()){
             // 日別アーカイブであれば
             $result[] = [
