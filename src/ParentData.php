@@ -96,4 +96,29 @@ class ParentData
 
         return $result;
     }
+
+    public static function nowPageDateArchiveGet(
+        bool $nowPageAdd=false,
+        string $yearFormat="Y",
+        string $monthFormat="Y/n",
+        string $dayFormat="Y/n/j",
+        string $howFar="m"
+    ): array
+    {
+        // 現在のぺージの親に相当する、年別、月別、日別のアーカイブを取得
+        // 現在のページが投稿ページ、年別、月別、日別のアーカイブの場合に機能し、それ以外は空の配列を返す
+        $result = [];
+
+        if(is_single()){
+            // 記事ページであれば
+        }elseif(is_year()){
+            // 年別アーカイブであれば
+        }elseif(is_month()){
+            // 月別アーカイブであれば
+        }elseif(is_day()){
+            // 日別アーカイブであれば
+        }
+
+        return $result;
+    }
 }
