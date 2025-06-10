@@ -363,4 +363,29 @@ class ArchivePage
         $type = self::postTypeGet();
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
+
+    public static function dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
+    {
+        // 日付からアーカイブページへのリンクを取得
+        if($postType === ""){
+            $postType = "post";
+        }
+
+        $result = "";
+
+        if($howFar === "y"){
+            $result = get_year_link($year);
+        }elseif($howFar === "m"){
+            $result = get_month_link($year, $month);
+        }else{
+            $result = get_day_link($year, $month, $day);
+        }
+
+        if($postType !== "post"){
+            // カスタム投稿タイプであれば
+            $result = add_query_arg("post_type", $postType, $result);
+        }
+
+        return $result;
+    }
 }
