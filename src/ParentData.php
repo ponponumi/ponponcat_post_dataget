@@ -105,7 +105,7 @@ class ParentData
     ): array
     {
         // 現在のぺージの親に相当する、年別、月別、日別のアーカイブを取得
-        // 現在のページが投稿ページ、年別、月別、日別のアーカイブの場合に機能し、それ以外は空の配列を返す
+        // 現在のページが投稿ページ、月別、日別のアーカイブの場合に機能し、それ以外は空の配列を返す
         $result = [];
 
         if(is_single()){
@@ -124,8 +124,6 @@ class ParentData
                 "name" => get_the_date($dayFormat),
                 "link" => ArchivePage::nowPageDateArchiveUrlGet(),
             ];
-        }elseif(is_year()){
-            // 年別アーカイブであれば
         }elseif(is_month()){
             // 月別アーカイブであれば
             $result[] = [
