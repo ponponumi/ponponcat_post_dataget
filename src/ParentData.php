@@ -80,4 +80,19 @@ class ParentData
 
         return $result;
     }
+
+    public static function nowFixedPageParentGet(bool $nowPageAdd=false): array
+    {
+        // 現在の固定ページの親ページを取得
+        // 現在が固定ページ以外の場合は空の配列を返す
+        $result = [];
+
+        if(is_page()){
+            // 現在が固定ページであれば
+            $fixedPageObject = get_queried_object();
+            $result = self::fixedPageParentGet($fixedPageObject,$nowPageAdd);
+        }
+
+        return $result;
+    }
 }
