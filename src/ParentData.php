@@ -56,4 +56,28 @@ class ParentData
 
         return $result;
     }
+
+    public static function fixedPageParentGet($fixedPageObject, bool $nowPageAdd=false): array
+    {
+        // 固定ページの親ページを取得
+        $result = [];
+
+        if($nowPageAdd){
+            $result[] = $fixedPageObject;
+        }
+
+        while(true){
+            if($fixedPageObject->parent === 0){
+                // 親ページがなくなったら
+                break;
+            }
+
+            $fixedPageObject = get_post($fixedPageObject->parent);
+            $result[] = $fixedPageObject;
+        }
+
+        $result = array_reverse($result);
+
+        return $result;
+    }
 }
