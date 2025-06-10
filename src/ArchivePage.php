@@ -363,4 +363,73 @@ class ArchivePage
         $type = self::postTypeGet();
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
+
+    public static function dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
+    {
+        // 日付からアーカイブページへのリンクを取得
+        if($postType === ""){
+            $postType = "post";
+        }
+
+        $result = "";
+
+        if($howFar === "y"){
+            $result = get_year_link($year);
+        }elseif($howFar === "m"){
+            $result = get_month_link($year, $month);
+        }else{
+            $result = get_day_link($year, $month, $day);
+        }
+
+        if($postType !== "post"){
+            // カスタム投稿タイプであれば
+            $result = add_query_arg("post_type", $postType, $result);
+        }
+
+        return $result;
+    }
+
+    public static function monthArchiveUrlGet(int $year,int $month,string $postType=""): string
+    {
+        return self::dateArchiveUrlGet($year, $month, 0, $postType, "m");
+    }
+
+    public static function yearArchiveUrlGet(int $year,string $postType=""): string
+    {
+        return self::dateArchiveUrlGet($year, 0, 0, $postType, "y");
+    }
+
+    public static function nowPageDateArchiveUrlGet(string $howFar="d"): string
+    {
+        // 現在の記事に対応する日別アーカイブのURLを取得
+        // 現在が記事、日別アーカイブ、月別アーカイブ、年別アーカイブでなければ空文字を返す
+        if(!is_day() && !is_month() && !is_year() && !is_single()){
+            return "";
+        }
+
+        $year = get_query_var("year");
+        $month = get_query_var("monthnum");
+        $day = get_query_var("day");
+
+        if(is_single()){
+            // 記事の場合
+            $year = get_the_time("Y");
+            $month = get_the_time("m");
+            $day = get_the_time("d");
+        }
+
+        $postType = self::postTypeGet();
+
+        return self::dateArchiveUrlGet($year, $month, $day, $postType, $howFar);
+    }
+
+    public static function nowPageMonthArchiveUrlGet(): string
+    {
+        return self::nowPageDateArchiveUrlGet("m");
+    }
+
+    public static function nowPageYearArchiveUrlGet(): string
+    {
+        return self::nowPageDateArchiveUrlGet("y");
+    }
 }
