@@ -67,12 +67,12 @@ class ParentData
         }
 
         while(true){
-            if($fixedPageObject->parent === 0){
+            if($fixedPageObject->post_parent === 0){
                 // 親ページがなくなったら
                 break;
             }
 
-            $fixedPageObject = get_post($fixedPageObject->parent);
+            $fixedPageObject = get_post($fixedPageObject->post_parent);
             $result[] = $fixedPageObject;
         }
 
