@@ -416,4 +416,9 @@ class ArchivePage
     {
         return self::nowPageDateArchiveUrlGet("m");
     }
+
+    public static function nowPageYearArchiveUrlGet(): string
+    {
+        return self::nowPageDateArchiveUrlGet("y");
+    }
 }
