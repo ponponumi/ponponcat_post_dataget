@@ -87,6 +87,12 @@
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPostTypeArchive()) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>現在のカテゴリーと親カテゴリー</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet()) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
