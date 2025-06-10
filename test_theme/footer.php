@@ -120,7 +120,12 @@
             <tr>
                 <td>現在のページの親の時期別アーカイブ</td>
                 <td>
-                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet()) ?></pre>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+                        howFar: "d",
+                        yearFormat: "Y年",
+                        monthFormat: "Y年n月",
+                        dayFormat: "Y年n月j日"
+                    )) ?></pre>
                 </td>
             </tr>
         </tbody>
