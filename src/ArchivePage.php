@@ -381,6 +381,13 @@ class ArchivePage
         return $result;
     }
 
+    /**
+     * 月から、アーカイブページへのURLを取得します。
+     * @param int $year ここには、年を数字で渡してください。
+     * @param int $month ここには、月を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @return string
+     */
     public static function monthArchiveUrlGet(int $year,int $month,string $postType=""): string
     {
         return self::dateArchiveUrlGet($year, $month, 0, $postType, "m");
