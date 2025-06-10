@@ -98,7 +98,6 @@ class ParentData
     }
 
     public static function nowPageDateArchiveGet(
-        bool $nowPageAdd=false,
         string $yearFormat="Y",
         string $monthFormat="Y/n",
         string $dayFormat="Y/n/j",
