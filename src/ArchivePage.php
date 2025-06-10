@@ -347,6 +347,15 @@ class ArchivePage
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
 
+    /**
+     * 日付から、アーカイブページへのURLを取得します
+     * @param int $year ここには、年を数字で渡してください。
+     * @param int $month ここには、月を数字で渡してください。
+     * @param int $day ここには、日を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @param string $howFar ここには、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月までとなります。
+     * @return string
+     */
     public static function dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
     {
         // 日付からアーカイブページへのリンクを取得
