@@ -411,6 +411,13 @@ class ArchivePage
         $month = get_query_var("monthnum");
         $day = get_query_var("day");
 
+        if(is_single()){
+            // 記事の場合
+            $year = get_the_time("Y");
+            $month = get_the_time("m");
+            $day = get_the_time("d");
+        }
+
         $postType = self::postTypeGet();
 
         return self::dateArchiveUrlGet($year, $month, $day, $postType, $howFar);
