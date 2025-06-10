@@ -130,6 +130,15 @@ class ParentData
             // 月別アーカイブであれば
         }elseif(is_day()){
             // 日別アーカイブであれば
+            $result[] = [
+                "name" => get_the_date($yearFormat),
+                "link" => ArchivePage::nowPageYearArchiveUrlGet(),
+            ];
+
+            $result[] = [
+                "name" => get_the_date($monthFormat),
+                "link" => ArchivePage::nowPageMonthArchiveUrlGet(),
+            ];
         }
 
         return $result;
