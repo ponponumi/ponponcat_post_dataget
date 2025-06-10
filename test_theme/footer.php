@@ -93,6 +93,12 @@
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet()) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>現在のページと親ページ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowFixedPageParentGet(true)) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
