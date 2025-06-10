@@ -99,6 +99,24 @@
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowFixedPageParentGet(true)) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>現在のページの年</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPageYearArchiveUrlGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの月</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPageMonthArchiveUrlGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの日</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPageDateArchiveUrlGet()) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
