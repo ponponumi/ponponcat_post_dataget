@@ -3,6 +3,7 @@
 namespace Ponponumi\PonponcatPostDataget;
 
 use WP_Term;
+use WP_Post;
 
 class ParentData
 {
@@ -57,7 +58,7 @@ class ParentData
         return $result;
     }
 
-    public static function fixedPageParentGet(WP_Term $fixedPageObject, bool $nowPageAdd=false): array
+    public static function fixedPageParentGet(WP_Post $fixedPageObject, bool $nowPageAdd=false): array
     {
         // 固定ページの親ページを取得
         $result = [];
