@@ -393,4 +393,9 @@ class ArchivePage
     {
         return self::dateArchiveUrlGet($year, $month, 0, $postType, "m");
     }
+
+    public static function yearArchiveUrlGet(int $year,string $postType=""): string
+    {
+        return self::dateArchiveUrlGet($year, 0, 0, $postType, "y");
+    }
 }
