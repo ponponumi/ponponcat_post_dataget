@@ -117,6 +117,12 @@
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPageDateArchiveUrlGet()) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>現在のページの親の時期別アーカイブ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet()) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
