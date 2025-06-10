@@ -101,6 +101,8 @@ class ParentData
         string $yearFormat="Y",
         string $monthFormat="Y/n",
         string $dayFormat="Y/n/j",
+        string $nameKey="name",
+        string $linkKey="link",
         string $howFar="m"
     ): array
     {
@@ -111,8 +113,8 @@ class ParentData
         if(is_single()){
             // 記事ページであれば
             $result[] = [
-                "name" => get_the_date($yearFormat),
-                "link" => ArchivePage::nowPageYearArchiveUrlGet(),
+                $nameKey => get_the_date($yearFormat),
+                $linkKey => ArchivePage::nowPageYearArchiveUrlGet(),
             ];
 
             if($howFar === "y"){
@@ -120,8 +122,8 @@ class ParentData
             }
 
             $result[] = [
-                "name" => get_the_date($monthFormat),
-                "link" => ArchivePage::nowPageMonthArchiveUrlGet(),
+                $nameKey => get_the_date($monthFormat),
+                $linkKey => ArchivePage::nowPageMonthArchiveUrlGet(),
             ];
 
             if($howFar === "m"){
@@ -129,25 +131,25 @@ class ParentData
             }
 
             $result[] = [
-                "name" => get_the_date($dayFormat),
-                "link" => ArchivePage::nowPageDateArchiveUrlGet(),
+                $nameKey => get_the_date($dayFormat),
+                $linkKey => ArchivePage::nowPageDateArchiveUrlGet(),
             ];
         }elseif(is_month()){
             // 月別アーカイブであれば
             $result[] = [
-                "name" => get_the_date($yearFormat),
-                "link" => ArchivePage::nowPageYearArchiveUrlGet(),
+                $nameKey => get_the_date($yearFormat),
+                $linkKey => ArchivePage::nowPageYearArchiveUrlGet(),
             ];
         }elseif(is_day()){
             // 日別アーカイブであれば
             $result[] = [
-                "name" => get_the_date($yearFormat),
-                "link" => ArchivePage::nowPageYearArchiveUrlGet(),
+                $nameKey => get_the_date($yearFormat),
+                $linkKey => ArchivePage::nowPageYearArchiveUrlGet(),
             ];
 
             $result[] = [
-                "name" => get_the_date($monthFormat),
-                "link" => ArchivePage::nowPageMonthArchiveUrlGet(),
+                $nameKey => get_the_date($monthFormat),
+                $linkKey => ArchivePage::nowPageMonthArchiveUrlGet(),
             ];
         }
 
