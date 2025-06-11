@@ -7,6 +7,13 @@ use WP_Post;
 
 class ParentData
 {
+    /**
+     * 親カテゴリーを取得します。
+     *
+     * @param WP_Term $categoryObject ここには、カテゴリーのオブジェクト(get_the_category関数などで取得したもの)を渡してください。
+     * @param boolean $nowCategoryAdd 現在のカテゴリーを追加するかどうかを選んでください。デフォルトは「true」です。
+     * @return array
+     */
     public static function parentCategoriesGet(WP_Term $categoryObject, bool $nowCategoryAdd=true): array
     {
         // 親カテゴリーを取得
