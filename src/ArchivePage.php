@@ -404,6 +404,12 @@ class ArchivePage
         return self::dateArchiveUrlGet($year, 0, 0, $postType, "y");
     }
 
+    /**
+     * 現在の記事に対応する日別アーカイブのURLを取得します。
+     *
+     * @param string $howFar ここには、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月までとなります。
+     * @return string
+     */
     public static function nowPageDateArchiveUrlGet(string $howFar="d"): string
     {
         // 現在の記事に対応する日別アーカイブのURLを取得
