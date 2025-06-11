@@ -72,6 +72,13 @@ class ParentData
         return $result;
     }
 
+    /**
+     * 固定ページの親ページを取得します。
+     *
+     * @param \WP_Post $fixedPageObject ここには、固定ページのオブジェクト(get_queried_object関数などで取得したもの)を渡してください。
+     * @param bool $nowPageAdd 現在のページを追加するか選んでください。デフォルトは「false」です。
+     * @return array<array|WP_Post|null>
+     */
     public static function fixedPageParentGet(WP_Post $fixedPageObject, bool $nowPageAdd=false): array
     {
         // 固定ページの親ページを取得
