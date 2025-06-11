@@ -118,7 +118,29 @@
                 </td>
             </tr>
             <tr>
-                <td>現在のページの親の時期別アーカイブ</td>
+                <td>現在のページの親の時期別アーカイブ(年まで)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+                        howFar: "y",
+                        yearFormat: "Y年",
+                        monthFormat: "Y年n月",
+                        dayFormat: "Y年n月j日"
+                    )) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの親の時期別アーカイブ(月まで)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+                        howFar: "m",
+                        yearFormat: "Y年",
+                        monthFormat: "Y年n月",
+                        dayFormat: "Y年n月j日"
+                    )) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの親の時期別アーカイブ(日まで)</td>
                 <td>
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
                         howFar: "d",
