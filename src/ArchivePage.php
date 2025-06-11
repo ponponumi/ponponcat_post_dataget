@@ -444,6 +444,11 @@ class ArchivePage
         return self::nowPageDateArchiveUrlGet("m");
     }
 
+    /**
+     * 現在の記事に対応する年別アーカイブのURLを取得します。
+     *
+     * @return string
+     */
     public static function nowPageYearArchiveUrlGet(): string
     {
         return self::nowPageDateArchiveUrlGet("y");
