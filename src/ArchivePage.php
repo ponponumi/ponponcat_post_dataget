@@ -434,6 +434,11 @@ class ArchivePage
         return self::dateArchiveUrlGet($year, $month, $day, $postType, $howFar);
     }
 
+    /**
+     * 現在の記事に対応する月別アーカイブのURLを取得します。
+     *
+     * @return string
+     */
     public static function nowPageMonthArchiveUrlGet(): string
     {
         return self::nowPageDateArchiveUrlGet("m");
