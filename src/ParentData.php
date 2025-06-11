@@ -103,6 +103,12 @@ class ParentData
         return $result;
     }
 
+    /**
+     * 現在の固定ページの親ページを取得します。
+     *
+     * @param boolean $nowPageAdd 現在のページを追加するか選んでください。デフォルトは「false」です。
+     * @return array
+     */
     public static function nowFixedPageParentGet(bool $nowPageAdd=false): array
     {
         // 現在の固定ページの親ページを取得
