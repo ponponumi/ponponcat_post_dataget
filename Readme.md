@@ -441,6 +441,10 @@ $result = [
 ];
 ```
 
+### dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
+
+日付から、アーカイブページへのURLを取得します。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
