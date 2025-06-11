@@ -124,6 +124,17 @@ class ParentData
         return $result;
     }
 
+    /**
+     * 現在のぺージの親に相当する、年別、月別、日別のアーカイブを取得します。現在のページが投稿ページ、月別、日別のアーカイブの場合に機能し、それ以外は空の配列を返します。
+     *
+     * @param string $yearFormat ここには、年別アーカイブの形式のフォーマット(date関数で使うもの)を渡してください。デフォルトでは「Y」です。
+     * @param string $monthFormat ここには、月別アーカイブの形式のフォーマット(date関数で使うもの)を渡してください。デフォルトでは「Y/n」です。
+     * @param string $dayFormat ここには、日別アーカイブの形式のフォーマット(date関数で使うもの)を渡してください。デフォルトでは「Y/n/j」です。
+     * @param string $nameKey ここには、戻り値の配列のキー(日付形式)の名前を渡してください。デフォルトでは「name」です。
+     * @param string $linkKey ここには、戻り値の配列のキー(URL)の名前を渡してください。デフォルトでは「link」です。
+     * @param string $howFar　 ここには、現在のページが投稿ページの場合、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月まで、「d」の場合は日付までとなります。
+     * @return array<bool|int|string>[]
+     */
     public static function nowPageDateArchiveGet(
         string $yearFormat="Y",
         string $monthFormat="Y/n",
