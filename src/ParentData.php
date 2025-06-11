@@ -38,6 +38,13 @@ class ParentData
         return $result;
     }
 
+    /**
+     * 現在のページの親のカテゴリーを取得します。
+     *
+     * @param integer $singleCategoryIndex どのインデックスのカテゴリーを取得するか選びます。デフォルトは0です。
+     * @param boolean $nowCategoryAdd 現在のカテゴリーを追加するかどうかを選んでください。デフォルトは「true」です。
+     * @return array
+     */
     public static function nowPageParentCategoriesGet(int $singleCategoryIndex=0, bool $nowCategoryAdd=true): array
     {
         // 現在のページの親カテゴリーを取得
