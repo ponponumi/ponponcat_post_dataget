@@ -473,6 +473,13 @@ $result = [
 
 「y」の場合は年別アーカイブ、「m」の場合は月別アーカイブ、「d」の場合は日別アーカイブになります。
 
+#### サンプルコード
+
+```php
+$url = ArchivePage::dateArchiveUrlGet(2025, 6, 12, "event");
+var_dump($url);   // 「http://localhost:5520/2025/06/12/?post_type=event」
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
