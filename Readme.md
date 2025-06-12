@@ -726,6 +726,10 @@ array(3) {
 }
 </pre>
 
+### nowPageParentCategoriesGet(int $singleCategoryIndex=0, bool $nowCategoryAdd=true): array
+
+現在のページの親カテゴリーを取得します。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
