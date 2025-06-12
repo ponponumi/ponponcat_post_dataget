@@ -601,6 +601,134 @@ var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」という�
 
 現在のカテゴリーを追加するかどうかを選んでください。デフォルトは「true」です。
 
+#### サンプルコード
+
+```php
+$categories = get_the_category();
+
+if(!empty($categories)){
+    $category = $categories[0];
+
+    $parentCategories = ParentData::parentCategoriesGet($category, true);
+    var_dump($parentCategories);
+}
+```
+
+次のように出力されます。
+
+```html
+<pre>
+	
+array(3) {
+  [0]=>
+  object(WP_Term)#806 (16) {
+    ["term_id"]=>
+    int(64)
+    ["name"]=>
+    string(18) "親カテゴリー"
+    ["slug"]=>
+    string(54) "%e8%a6%aa%e3%82%ab%e3%83%86%e3%82%b4%e3%83%aa%e3%83%bc"
+    ["term_group"]=>
+    int(0)
+    ["term_taxonomy_id"]=>
+    int(64)
+    ["taxonomy"]=>
+    string(8) "category"
+    ["description"]=>
+    string(0) ""
+    ["parent"]=>
+    int(0)
+    ["count"]=>
+    int(1)
+    ["filter"]=>
+    string(3) "raw"
+    ["cat_ID"]=>
+    int(64)
+    ["category_count"]=>
+    int(1)
+    ["category_description"]=>
+    string(0) ""
+    ["cat_name"]=>
+    string(18) "親カテゴリー"
+    ["category_nicename"]=>
+    string(54) "%e8%a6%aa%e3%82%ab%e3%83%86%e3%82%b4%e3%83%aa%e3%83%bc"
+    ["category_parent"]=>
+    int(0)
+  }
+  [1]=>
+  object(WP_Term)#821 (16) {
+    ["term_id"]=>
+    int(71)
+    ["name"]=>
+    string(21) "子カテゴリー 03"
+    ["slug"]=>
+    string(17) "child-category-03"
+    ["term_group"]=>
+    int(0)
+    ["term_taxonomy_id"]=>
+    int(71)
+    ["taxonomy"]=>
+    string(8) "category"
+    ["description"]=>
+    string(48) "This is a description for the Child Category 03."
+    ["parent"]=>
+    int(64)
+    ["count"]=>
+    int(1)
+    ["filter"]=>
+    string(3) "raw"
+    ["cat_ID"]=>
+    int(71)
+    ["category_count"]=>
+    int(1)
+    ["category_description"]=>
+    string(48) "This is a description for the Child Category 03."
+    ["cat_name"]=>
+    string(21) "子カテゴリー 03"
+    ["category_nicename"]=>
+    string(17) "child-category-03"
+    ["category_parent"]=>
+    int(64)
+  }
+  [2]=>
+  object(WP_Term)#901 (16) {
+    ["term_id"]=>
+    int(74)
+    ["name"]=>
+    string(18) "孫カテゴリー"
+    ["slug"]=>
+    string(19) "grandchild-category"
+    ["term_group"]=>
+    int(0)
+    ["term_taxonomy_id"]=>
+    int(74)
+    ["taxonomy"]=>
+    string(8) "category"
+    ["description"]=>
+    string(50) "This is a description for the Grandchild Category."
+    ["parent"]=>
+    int(71)
+    ["count"]=>
+    int(1)
+    ["filter"]=>
+    string(3) "raw"
+    ["cat_ID"]=>
+    int(74)
+    ["category_count"]=>
+    int(1)
+    ["category_description"]=>
+    string(50) "This is a description for the Grandchild Category."
+    ["cat_name"]=>
+    string(18) "孫カテゴリー"
+    ["category_nicename"]=>
+    string(19) "grandchild-category"
+    ["category_parent"]=>
+    int(71)
+  }
+}
+</pre>
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
