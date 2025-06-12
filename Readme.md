@@ -587,6 +587,10 @@ var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」という�
 
 以下のようなメソッドがございます。
 
+### parentCategoriesGet(WP_Term $categoryObject, bool $nowCategoryAdd=true): array
+
+親カテゴリーを取得します。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
