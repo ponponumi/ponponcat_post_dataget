@@ -94,6 +94,32 @@
                 </td>
             </tr>
             <tr>
+                <td>現在のカテゴリーと親カテゴリー(最初)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet(512)) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のカテゴリーと親カテゴリー(最後)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet(512,notIndexMode: "end")) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のカテゴリーと親カテゴリー(エラー)</td>
+                <td>
+                    <pre><?php
+
+                    try{
+                        var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet(512,notIndexMode: "error"));
+                    }catch(Exception $e){
+                        var_dump($e);
+                    }
+
+                    ?></pre>
+                </td>
+            </tr>
+            <tr>
                 <td>現在のページと親ページ</td>
                 <td>
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowFixedPageParentGet(true)) ?></pre>
