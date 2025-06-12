@@ -43,6 +43,10 @@ class ParentData
             $categories = get_the_category();
 
             if(!empty($categories)){
+                if(!array_key_exists($singleCategoryIndex, $categories)){
+                    throw new \Exception("インデックス番号 " . strval($singleCategoryIndex) . " のカテゴリーは見つかりません。インデックスは、 " . count($categories) - 1 . " 以下である必要があります。");
+                }
+
                 $categoryObject = $categories[$singleCategoryIndex];
             }
 
