@@ -583,6 +583,10 @@ $url = ArchivePage::nowPageYearArchiveUrlGet();
 var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」という感じで出力されます
 ```
 
+## ParentDataクラスについて
+
+以下のようなメソッドがございます。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
