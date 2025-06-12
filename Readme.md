@@ -744,6 +744,14 @@ array(3) {
 
 デフォルトは「true」です。
 
+#### サンプルコード
+
+```php
+$parentCategories = ParentData::nowPageParentCategoriesGet();
+```
+
+(結果はparentCategoriesGetメソッドのようになります)
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
