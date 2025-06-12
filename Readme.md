@@ -570,6 +570,19 @@ $url = ArchivePage::nowPageMonthArchiveUrlGet();
 var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」という感じで出力されます
 ```
 
+### nowPageYearArchiveUrlGet(): string
+
+現在のページに対応する、年別アーカイブのURLを取得します。
+
+引数はありません。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::nowPageYearArchiveUrlGet();
+var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」という感じで出力されます
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
