@@ -443,7 +443,7 @@ $result = [
 
 ### dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
 
-日付から、アーカイブページへのURLを取得します。
+日付から、日別アーカイブページへのURLを取得します。
 
 #### 引数について
 
