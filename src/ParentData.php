@@ -43,6 +43,7 @@ class ParentData
      *
      * @param integer $singleCategoryIndex どのインデックスのカテゴリーを取得するか選びます。デフォルトは0です。
      * @param boolean $nowCategoryAdd 現在のカテゴリーを追加するかどうかを選んでください。デフォルトは「true」です。
+     * @param string $notIndexMode カテゴリーのインデックスが見つからない場合、どうするか選んでください。「start」なら最初、「end」なら最後のカテゴリーを使い、「error」ならエラーを起こします。初期状態では「start」です。
      * @return array
      */
     public static function nowPageParentCategoriesGet(int $singleCategoryIndex=0, bool $nowCategoryAdd=true, string $notIndexMode="start"): array
