@@ -616,9 +616,7 @@ if(!empty($categories)){
 
 次のように出力されます。
 
-```html
 <pre>
-	
 array(3) {
   [0]=>
   object(WP_Term)#806 (16) {
@@ -727,7 +725,6 @@ array(3) {
   }
 }
 </pre>
-```
 
 ## ライセンスについて
 
