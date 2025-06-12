@@ -532,7 +532,7 @@ var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」と出�
 #### サンプルコード
 
 ```php
-$url = ArchivePage::monthArchiveUrlGet(2025, "event");
+$url = ArchivePage::yearArchiveUrlGet(2025, "event");
 var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」と出力されます
 ```
 
