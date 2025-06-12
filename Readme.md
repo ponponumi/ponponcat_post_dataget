@@ -559,7 +559,7 @@ var_dump($url);   // 「http://localhost:5520/2025/06/12/?post_type=event」と�
 
 ### nowPageMonthArchiveUrlGet(): string
 
-現在のページに対応する、日別アーカイブのURLを取得します。
+現在のページに対応する、月別アーカイブのURLを取得します。
 
 引数はありません。
 
@@ -580,7 +580,7 @@ var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」とい�
 
 ```php
 $url = ArchivePage::nowPageYearArchiveUrlGet();
-var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」という感じで出力されます
+var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」という感じで出力されます
 ```
 
 ## ライセンスについて
