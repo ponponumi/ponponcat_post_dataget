@@ -482,6 +482,35 @@ $url = ArchivePage::dateArchiveUrlGet(2025, 6, 12, "event");
 var_dump($url);   // 「http://localhost:5520/2025/06/12/?post_type=event」と出力されます
 ```
 
+### monthArchiveUrlGet(int $year,int $month,string $postType=""): string
+
+月から、月別アーカイブページへのURLを取得します。
+
+#### 引数について
+
+##### int $year
+
+ここには、アーカイブページの年を渡してください。
+
+##### int $month
+
+ここには、アーカイブページの月を渡してください。
+
+##### string $postType=""
+
+ここには、投稿タイプの名前を渡してください。
+
+通常の投稿タイプの場合、空文字、またはpostにしてください。
+
+カスタム投稿タイプの場合、その名前を渡してください。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::monthArchiveUrlGet(2025, 6, "event");
+var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」と出力されます
+```
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
