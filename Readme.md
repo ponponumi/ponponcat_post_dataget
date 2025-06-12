@@ -591,6 +591,16 @@ var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」という�
 
 親カテゴリーを取得します。
 
+#### 引数について
+
+##### $categoryObject
+
+ここには、カテゴリーのオブジェクト(get_the_category関数などで取得したもの)を渡してください。
+
+##### bool $nowCategoryAdd=true
+
+現在のカテゴリーを追加するかどうかを選んでください。デフォルトは「true」です。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
