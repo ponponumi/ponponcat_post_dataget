@@ -477,7 +477,7 @@ $result = [
 
 ```php
 $url = ArchivePage::dateArchiveUrlGet(2025, 6, 12, "event");
-var_dump($url);   // 「http://localhost:5520/2025/06/12/?post_type=event」
+var_dump($url);   // 「http://localhost:5520/2025/06/12/?post_type=event」と出力されます
 ```
 
 ## ライセンスについて
