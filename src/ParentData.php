@@ -132,7 +132,7 @@ class ParentData
      * @param string $dayFormat ここには、日別アーカイブの形式のフォーマット(date関数で使うもの)を渡してください。デフォルトでは「Y/n/j」です。
      * @param string $nameKey ここには、戻り値の配列のキー(日付形式)の名前を渡してください。デフォルトでは「name」です。
      * @param string $linkKey ここには、戻り値の配列のキー(URL)の名前を渡してください。デフォルトでは「link」です。
-     * @param string $howFar　 ここには、現在のページが投稿ページの場合、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月まで、「d」の場合は日付までとなります。
+     * @param string $howFar ここには、現在のページが投稿ページの場合、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月まで、「d」の場合は日付までとなります。
      * @return array<bool|int|string>[]
      */
     public static function nowPageDateArchiveGet(
