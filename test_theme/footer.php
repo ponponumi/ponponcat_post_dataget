@@ -87,6 +87,73 @@
                     <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPostTypeArchive()) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>現在のカテゴリーと親カテゴリー</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のカテゴリーと親カテゴリー(最初)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet(512)) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のカテゴリーと親カテゴリー(最後)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet(512,notIndexMode: "end")) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のカテゴリーと親カテゴリー(エラー)</td>
+                <td>
+                    <pre><?php
+
+                    try{
+                        var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageParentCategoriesGet(512,notIndexMode: "error"));
+                    }catch(Exception $e){
+                        var_dump($e);
+                    }
+
+                    ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページと親ページ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowFixedPageParentGet(true)) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの年</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPageYearArchiveUrlGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの月</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPageMonthArchiveUrlGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの日</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::nowPageDateArchiveUrlGet()) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの親の時期別アーカイブ</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+                        howFar: "d",
+                        yearFormat: "Y年",
+                        monthFormat: "Y年n月",
+                        dayFormat: "Y年n月j日"
+                    )) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>

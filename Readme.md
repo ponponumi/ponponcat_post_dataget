@@ -441,6 +441,608 @@ $result = [
 ];
 ```
 
+### dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
+
+日付から、日別アーカイブページへのURLを取得します。
+
+#### 引数について
+
+##### int $year
+
+ここには、アーカイブページの年を渡してください。
+
+##### int $month
+
+ここには、アーカイブページの月を渡してください。
+
+##### int $day
+
+ここには、アーカイブページの日を渡してください。
+
+##### string $postType=""
+
+ここには、投稿タイプの名前を渡してください。
+
+通常の投稿タイプの場合、空文字、またはpostにしてください。
+
+カスタム投稿タイプの場合、その名前を渡してください。
+
+##### string $howFar="d"
+
+ここには、どこまで取得するかを渡してください。
+
+「y」の場合は年別アーカイブ、「m」の場合は月別アーカイブ、「d」の場合は日別アーカイブになります。
+
+初期状態は「d」になります。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::dateArchiveUrlGet(2025, 6, 12, "event");
+var_dump($url);   // 「http://localhost:5520/2025/06/12/?post_type=event」と出力されます
+```
+
+### monthArchiveUrlGet(int $year,int $month,string $postType=""): string
+
+月から、月別アーカイブページへのURLを取得します。
+
+#### 引数について
+
+##### int $year
+
+ここには、アーカイブページの年を渡してください。
+
+##### int $month
+
+ここには、アーカイブページの月を渡してください。
+
+##### string $postType=""
+
+ここには、投稿タイプの名前を渡してください。
+
+通常の投稿タイプの場合、空文字、またはpostにしてください。
+
+カスタム投稿タイプの場合、その名前を渡してください。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::monthArchiveUrlGet(2025, 6, "event");
+var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」と出力されます
+```
+
+### yearArchiveUrlGet(int $year,string $postType=""): string
+
+年から、年別アーカイブページへのURLを取得します。
+
+#### 引数について
+
+##### int $year
+
+ここには、アーカイブページの年を渡してください。
+
+##### string $postType=""
+
+ここには、投稿タイプの名前を渡してください。
+
+通常の投稿タイプの場合、空文字、またはpostにしてください。
+
+カスタム投稿タイプの場合、その名前を渡してください。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::yearArchiveUrlGet(2025, "event");
+var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」と出力されます
+```
+
+### nowPageDateArchiveUrlGet(string $howFar="d"): string
+
+現在のページに対応する、日別アーカイブのURLを取得します。
+
+#### 引数について
+
+##### string $howFar="d"
+
+ここには、どこまで取得するかを渡してください。
+
+「y」の場合は年別アーカイブ、「m」の場合は月別アーカイブ、「d」の場合は日別アーカイブになります。
+
+初期状態は「d」になります。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::nowPageDateArchiveUrlGet();
+var_dump($url);   // 「http://localhost:5520/2025/06/12/?post_type=event」という感じで出力されます
+```
+
+### nowPageMonthArchiveUrlGet(): string
+
+現在のページに対応する、月別アーカイブのURLを取得します。
+
+引数はありません。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::nowPageMonthArchiveUrlGet();
+var_dump($url);   // 「http://localhost:5520/2025/06/?post_type=event」という感じで出力されます
+```
+
+### nowPageYearArchiveUrlGet(): string
+
+現在のページに対応する、年別アーカイブのURLを取得します。
+
+引数はありません。
+
+#### サンプルコード
+
+```php
+$url = ArchivePage::nowPageYearArchiveUrlGet();
+var_dump($url);   // 「http://localhost:5520/2025/?post_type=event」という感じで出力されます
+```
+
+## ParentDataクラスについて
+
+以下のようなメソッドがございます。
+
+### parentCategoriesGet(WP_Term $categoryObject, bool $nowCategoryAdd=true): array
+
+親カテゴリーを取得します。
+
+#### 引数について
+
+##### $categoryObject
+
+ここには、カテゴリーのオブジェクト(get_the_category関数などで取得したもの)を渡してください。
+
+##### bool $nowCategoryAdd=true
+
+現在のカテゴリーを追加するかどうかを選んでください。デフォルトは「true」です。
+
+#### サンプルコード
+
+```php
+$categories = get_the_category();
+
+if(!empty($categories)){
+    $category = $categories[0];
+
+    $parentCategories = ParentData::parentCategoriesGet($category, true);
+    var_dump($parentCategories);
+}
+```
+
+次のように出力されます。
+
+<pre>
+array(3) {
+  [0]=>
+  object(WP_Term)#806 (16) {
+    ["term_id"]=>
+    int(64)
+    ["name"]=>
+    string(18) "親カテゴリー"
+    ["slug"]=>
+    string(54) "%e8%a6%aa%e3%82%ab%e3%83%86%e3%82%b4%e3%83%aa%e3%83%bc"
+    ["term_group"]=>
+    int(0)
+    ["term_taxonomy_id"]=>
+    int(64)
+    ["taxonomy"]=>
+    string(8) "category"
+    ["description"]=>
+    string(0) ""
+    ["parent"]=>
+    int(0)
+    ["count"]=>
+    int(1)
+    ["filter"]=>
+    string(3) "raw"
+    ["cat_ID"]=>
+    int(64)
+    ["category_count"]=>
+    int(1)
+    ["category_description"]=>
+    string(0) ""
+    ["cat_name"]=>
+    string(18) "親カテゴリー"
+    ["category_nicename"]=>
+    string(54) "%e8%a6%aa%e3%82%ab%e3%83%86%e3%82%b4%e3%83%aa%e3%83%bc"
+    ["category_parent"]=>
+    int(0)
+  }
+  [1]=>
+  object(WP_Term)#821 (16) {
+    ["term_id"]=>
+    int(71)
+    ["name"]=>
+    string(21) "子カテゴリー 03"
+    ["slug"]=>
+    string(17) "child-category-03"
+    ["term_group"]=>
+    int(0)
+    ["term_taxonomy_id"]=>
+    int(71)
+    ["taxonomy"]=>
+    string(8) "category"
+    ["description"]=>
+    string(48) "This is a description for the Child Category 03."
+    ["parent"]=>
+    int(64)
+    ["count"]=>
+    int(1)
+    ["filter"]=>
+    string(3) "raw"
+    ["cat_ID"]=>
+    int(71)
+    ["category_count"]=>
+    int(1)
+    ["category_description"]=>
+    string(48) "This is a description for the Child Category 03."
+    ["cat_name"]=>
+    string(21) "子カテゴリー 03"
+    ["category_nicename"]=>
+    string(17) "child-category-03"
+    ["category_parent"]=>
+    int(64)
+  }
+  [2]=>
+  object(WP_Term)#901 (16) {
+    ["term_id"]=>
+    int(74)
+    ["name"]=>
+    string(18) "孫カテゴリー"
+    ["slug"]=>
+    string(19) "grandchild-category"
+    ["term_group"]=>
+    int(0)
+    ["term_taxonomy_id"]=>
+    int(74)
+    ["taxonomy"]=>
+    string(8) "category"
+    ["description"]=>
+    string(50) "This is a description for the Grandchild Category."
+    ["parent"]=>
+    int(71)
+    ["count"]=>
+    int(1)
+    ["filter"]=>
+    string(3) "raw"
+    ["cat_ID"]=>
+    int(74)
+    ["category_count"]=>
+    int(1)
+    ["category_description"]=>
+    string(50) "This is a description for the Grandchild Category."
+    ["cat_name"]=>
+    string(18) "孫カテゴリー"
+    ["category_nicename"]=>
+    string(19) "grandchild-category"
+    ["category_parent"]=>
+    int(71)
+  }
+}
+</pre>
+
+### nowPageParentCategoriesGet(int $singleCategoryIndex=0, bool $nowCategoryAdd=true): array
+
+現在のページの親カテゴリーを取得します。
+
+#### 引数について
+
+##### int $singleCategoryIndex=0
+
+現在の記事に複数のカテゴリーがある場合、どのインデックスのカテゴリーを取得するか選びます。
+
+デフォルトは0です。
+
+##### bool $nowCategoryAdd=true
+
+現在のカテゴリーを追加するかどうかを選んでください。
+
+デフォルトは「true」です。
+
+##### string $notIndexMode="start"
+
+カテゴリーのインデックスが見つからない場合、どうするか選んでください。
+
+「start」なら最初、「end」なら最後のカテゴリーを使い、「error」ならエラーを起こします。
+
+初期状態では「start」です。
+
+#### サンプルコード
+
+```php
+$parentCategories = ParentData::nowPageParentCategoriesGet();
+```
+
+(結果はparentCategoriesGetメソッドのようになります)
+
+### fixedPageParentGet(WP_Post $fixedPageObject, bool $nowPageAdd=false): array
+
+固定ページの親ページを取得します。
+
+#### 引数について
+
+##### WP_Post $fixedPageObject
+
+ここには、固定ページのオブジェクト(get_queried_object関数などで取得したもの)を渡してください。
+
+##### bool $nowPageAdd=false
+
+現在のページを追加するか選んでください。
+
+デフォルトは「false」です。
+
+#### サンプルコード
+
+```php
+if(is_page()){
+    $fixedPageObject = get_queried_object();
+    $parentPage = ParentData::fixedPageParentGet($fixedPageObject, true);
+    var_dump($parentPage);
+}
+```
+
+次のように出力されます。
+
+<pre>
+array(3) {
+  [0]=>
+  object(WP_Post)#1300 (24) {
+    ["ID"]=>
+    int(2116)
+    ["post_author"]=>
+    string(1) "1"
+    ["post_date"]=>
+    string(19) "2025-06-13 12:48:07"
+    ["post_date_gmt"]=>
+    string(19) "2025-06-13 03:48:07"
+    ["post_content"]=>
+    string(64) "
+テキスト
+
+
+"
+    ["post_title"]=>
+    string(19) "テストページ1"
+    ["post_excerpt"]=>
+    string(0) ""
+    ["post_status"]=>
+    string(7) "publish"
+    ["comment_status"]=>
+    string(6) "closed"
+    ["ping_status"]=>
+    string(6) "closed"
+    ["post_password"]=>
+    string(0) ""
+    ["post_name"]=>
+    string(55) "%e3%83%86%e3%82%b9%e3%83%88%e3%83%9a%e3%83%bc%e3%82%b81"
+    ["to_ping"]=>
+    string(0) ""
+    ["pinged"]=>
+    string(0) ""
+    ["post_modified"]=>
+    string(19) "2025-06-13 12:48:07"
+    ["post_modified_gmt"]=>
+    string(19) "2025-06-13 03:48:07"
+    ["post_content_filtered"]=>
+    string(0) ""
+    ["post_parent"]=>
+    int(0)
+    ["guid"]=>
+    string(35) "http://localhost:5520/?page_id=2116"
+    ["menu_order"]=>
+    int(0)
+    ["post_type"]=>
+    string(4) "page"
+    ["post_mime_type"]=>
+    string(0) ""
+    ["comment_count"]=>
+    string(1) "0"
+    ["filter"]=>
+    string(3) "raw"
+  }
+  [1]=>
+  object(WP_Post)#1009 (24) {
+    ["ID"]=>
+    int(2118)
+    ["post_author"]=>
+    string(1) "1"
+    ["post_date"]=>
+    string(19) "2025-06-13 12:48:36"
+    ["post_date_gmt"]=>
+    string(19) "2025-06-13 03:48:36"
+    ["post_content"]=>
+    string(64) "
+テキスト
+
+
+"
+    ["post_title"]=>
+    string(21) "テストページ1-1"
+    ["post_excerpt"]=>
+    string(0) ""
+    ["post_status"]=>
+    string(7) "publish"
+    ["comment_status"]=>
+    string(6) "closed"
+    ["ping_status"]=>
+    string(6) "closed"
+    ["post_password"]=>
+    string(0) ""
+    ["post_name"]=>
+    string(57) "%e3%83%86%e3%82%b9%e3%83%88%e3%83%9a%e3%83%bc%e3%82%b81-1"
+    ["to_ping"]=>
+    string(0) ""
+    ["pinged"]=>
+    string(0) ""
+    ["post_modified"]=>
+    string(19) "2025-06-13 12:48:36"
+    ["post_modified_gmt"]=>
+    string(19) "2025-06-13 03:48:36"
+    ["post_content_filtered"]=>
+    string(0) ""
+    ["post_parent"]=>
+    int(2116)
+    ["guid"]=>
+    string(35) "http://localhost:5520/?page_id=2118"
+    ["menu_order"]=>
+    int(0)
+    ["post_type"]=>
+    string(4) "page"
+    ["post_mime_type"]=>
+    string(0) ""
+    ["comment_count"]=>
+    string(1) "0"
+    ["filter"]=>
+    string(3) "raw"
+  }
+  [2]=>
+  object(WP_Post)#755 (24) {
+    ["ID"]=>
+    int(2120)
+    ["post_author"]=>
+    string(1) "1"
+    ["post_date"]=>
+    string(19) "2025-06-13 12:48:57"
+    ["post_date_gmt"]=>
+    string(19) "2025-06-13 03:48:57"
+    ["post_content"]=>
+    string(64) "
+テキスト
+
+
+"
+    ["post_title"]=>
+    string(23) "テストページ1-1-1"
+    ["post_excerpt"]=>
+    string(0) ""
+    ["post_status"]=>
+    string(7) "publish"
+    ["comment_status"]=>
+    string(6) "closed"
+    ["ping_status"]=>
+    string(6) "closed"
+    ["post_password"]=>
+    string(0) ""
+    ["post_name"]=>
+    string(59) "%e3%83%86%e3%82%b9%e3%83%88%e3%83%9a%e3%83%bc%e3%82%b81-1-1"
+    ["to_ping"]=>
+    string(0) ""
+    ["pinged"]=>
+    string(0) ""
+    ["post_modified"]=>
+    string(19) "2025-06-13 12:48:57"
+    ["post_modified_gmt"]=>
+    string(19) "2025-06-13 03:48:57"
+    ["post_content_filtered"]=>
+    string(0) ""
+    ["post_parent"]=>
+    int(2118)
+    ["guid"]=>
+    string(35) "http://localhost:5520/?page_id=2120"
+    ["menu_order"]=>
+    int(0)
+    ["post_type"]=>
+    string(4) "page"
+    ["post_mime_type"]=>
+    string(0) ""
+    ["comment_count"]=>
+    string(1) "0"
+    ["filter"]=>
+    string(3) "raw"
+  }
+}
+</pre>
+
+### nowPageDateArchiveGet(string $yearFormat="Y", string $monthFormat="Y/n", string $dayFormat="Y/n/j", string $nameKey="name", string $linkKey="link", string $howFar="m"): array
+
+現在のぺージの親に相当する、年別、月別、日別のアーカイブを取得します。
+
+現在のページが投稿ページ、月別、日別のアーカイブの場合に機能し、それ以外は空の配列を返します。
+
+#### 引数について
+
+##### string $yearFormat="Y"
+
+ここには、年別アーカイブの形式のフォーマット(date関数で使うもの)を渡してください。
+
+デフォルトでは「Y」です。
+
+##### string $monthFormat="Y/n"
+
+ここには、月別アーカイブの形式のフォーマット(date関数で使うもの)を渡してください。
+
+デフォルトでは「Y/n」です。
+
+##### string $dayFormat="Y/n/j"
+
+ここには、日別アーカイブの形式のフォーマット(date関数で使うもの)を渡してください。
+
+デフォルトでは「Y/n/j」です。
+
+##### string $nameKey="name"
+
+ここには、戻り値の配列のキー(日付形式)の名前を渡してください。
+
+デフォルトでは「name」です。
+
+##### string $linkKey="link"
+
+ここには、戻り値の配列のキー(URL)の名前を渡してください。
+
+デフォルトでは「link」です。
+
+##### string $howFar="m"
+
+ここには、現在のページが投稿ページの場合、どこまで取得するかを渡してください。
+
+「y」の場合は年まで、「m」の場合は月まで、「d」の場合は日付までとなります。
+
+#### サンプルコード
+
+```php
+$dateArchive = \Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+    howFar: "d",
+    yearFormat: "Y年",
+    monthFormat: "Y年n月",
+    dayFormat: "Y年n月j日"
+);
+
+var_dump($dateArchive);
+```
+
+次のように出力されます。
+
+<pre>
+array(3) {
+  [0]=>
+  array(2) {
+    ["name"]=>
+    string(7) "2025年"
+    ["link"]=>
+    string(27) "http://localhost:5520/2025/"
+  }
+  [1]=>
+  array(2) {
+    ["name"]=>
+    string(11) "2025年6月"
+    ["link"]=>
+    string(30) "http://localhost:5520/2025/06/"
+  }
+  [2]=>
+  array(2) {
+    ["name"]=>
+    string(16) "2025年6月13日"
+    ["link"]=>
+    string(33) "http://localhost:5520/2025/06/13/"
+  }
+}
+</pre>
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。

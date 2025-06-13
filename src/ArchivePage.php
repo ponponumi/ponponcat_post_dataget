@@ -288,34 +288,17 @@ class ArchivePage
             $url = "";
             $dateData = explode("/",$date);
 
-            if($postType === "post"){
-                // 通常の投稿なら
-                if(count($dateData) === 1){
-                    // 年なら
-                    $url = get_year_link(intval($dateData[0]));
-                    $date .= "/1/1";
-                }elseif(count($dateData) === 2){
-                    // 月なら
-                    $url = get_month_link(intval($dateData[0]), intval($dateData[1]));
-                    $date .= "/1";
-                }elseif(count($dateData) === 3){
-                    // 日なら
-                    $url = get_day_link(intval($dateData[0]), intval($dateData[1]), intval($dateData[2]));
-                }
-            }else{
-                // カスタム投稿なら
-                if(count($dateData) === 1){
-                    // 年なら
-                    $url = add_query_arg("post_type", $postType, get_year_link(intval($dateData[0])));
-                    $date .= "/1/1";
-                }elseif(count($dateData) === 2){
-                    // 月なら
-                    $url = add_query_arg("post_type", $postType, get_month_link(intval($dateData[0]), intval($dateData[1])));
-                    $date .= "/1";
-                }elseif(count($dateData) === 3){
-                    // 日なら
-                    $url = add_query_arg("post_type", $postType, get_day_link(intval($dateData[0]), intval($dateData[1]), intval($dateData[2])));
-                }
+            if(count($dateData) === 1){
+                // 年なら
+                $url = self::yearArchiveUrlGet(intval($dateData[0]), $postType);
+                $date .= "/1/1";
+            }elseif(count($dateData) === 2){
+                // 月なら
+                $url = self::monthArchiveUrlGet(intval($dateData[0]), intval($dateData[1]), $postType);
+                $date .= "/1";
+            }elseif(count($dateData) === 3){
+                // 日なら
+                $url = self::dateArchiveUrlGet(intval($dateData[0]), intval($dateData[1]), intval($dateData[2]), $postType);
             }
 
             $result[] = [
@@ -362,5 +345,112 @@ class ArchivePage
         $data = self::datesGet();
         $type = self::postTypeGet();
         return self::dateArchiveUrlGetSystem($data, $type, $format);
+    }
+
+    /**
+     * 日付から、アーカイブページへのURLを取得します
+     * @param int $year ここには、年を数字で渡してください。
+     * @param int $month ここには、月を数字で渡してください。
+     * @param int $day ここには、日を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @param string $howFar ここには、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月までとなります。
+     * @return string
+     */
+    public static function dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
+    {
+        // 日付からアーカイブページへのリンクを取得
+        if($postType === ""){
+            $postType = "post";
+        }
+
+        $result = "";
+
+        if($howFar === "y"){
+            $result = get_year_link($year);
+        }elseif($howFar === "m"){
+            $result = get_month_link($year, $month);
+        }else{
+            $result = get_day_link($year, $month, $day);
+        }
+
+        if($postType !== "post"){
+            // カスタム投稿タイプであれば
+            $result = add_query_arg("post_type", $postType, $result);
+        }
+
+        return $result;
+    }
+
+    /**
+     * 月から、アーカイブページへのURLを取得します。
+     * @param int $year ここには、年を数字で渡してください。
+     * @param int $month ここには、月を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @return string
+     */
+    public static function monthArchiveUrlGet(int $year,int $month,string $postType=""): string
+    {
+        return self::dateArchiveUrlGet($year, $month, 0, $postType, "m");
+    }
+
+    /**
+     * 年から、アーカイブページへのURLを取得します。
+     * @param int $year ここには、年を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @return string
+     */
+    public static function yearArchiveUrlGet(int $year,string $postType=""): string
+    {
+        return self::dateArchiveUrlGet($year, 0, 0, $postType, "y");
+    }
+
+    /**
+     * 現在の記事に対応する日別アーカイブのURLを取得します。
+     *
+     * @param string $howFar ここには、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月までとなります。
+     * @return string
+     */
+    public static function nowPageDateArchiveUrlGet(string $howFar="d"): string
+    {
+        // 現在の記事に対応する日別アーカイブのURLを取得
+        // 現在が記事、日別アーカイブ、月別アーカイブ、年別アーカイブでなければ空文字を返す
+        if(!is_day() && !is_month() && !is_year() && !is_single()){
+            return "";
+        }
+
+        $year = get_query_var("year");
+        $month = get_query_var("monthnum");
+        $day = get_query_var("day");
+
+        if(is_single()){
+            // 記事の場合
+            $year = get_the_time("Y");
+            $month = get_the_time("m");
+            $day = get_the_time("d");
+        }
+
+        $postType = self::postTypeGet();
+
+        return self::dateArchiveUrlGet($year, $month, $day, $postType, $howFar);
+    }
+
+    /**
+     * 現在の記事に対応する月別アーカイブのURLを取得します。
+     *
+     * @return string
+     */
+    public static function nowPageMonthArchiveUrlGet(): string
+    {
+        return self::nowPageDateArchiveUrlGet("m");
+    }
+
+    /**
+     * 現在の記事に対応する年別アーカイブのURLを取得します。
+     *
+     * @return string
+     */
+    public static function nowPageYearArchiveUrlGet(): string
+    {
+        return self::nowPageDateArchiveUrlGet("y");
     }
 }
