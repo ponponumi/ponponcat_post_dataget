@@ -760,6 +760,22 @@ $parentCategories = ParentData::nowPageParentCategoriesGet();
 
 (結果はparentCategoriesGetメソッドのようになります)
 
+### fixedPageParentGet(WP_Post $fixedPageObject, bool $nowPageAdd=false): array
+
+固定ページの親ページを取得します。
+
+#### 引数について
+
+##### WP_Post $fixedPageObject
+
+ここには、固定ページのオブジェクト(get_queried_object関数などで取得したもの)を渡してください。
+
+##### bool $nowPageAdd=false
+
+現在のページを追加するか選んでください。
+
+デフォルトは「false」です。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
