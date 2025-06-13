@@ -1002,6 +1002,47 @@ array(3) {
 
 「y」の場合は年まで、「m」の場合は月まで、「d」の場合は日付までとなります。
 
+#### サンプルコード
+
+```php
+$dateArchive = \Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+    howFar: "d",
+    yearFormat: "Y年",
+    monthFormat: "Y年n月",
+    dayFormat: "Y年n月j日"
+);
+
+var_dump($dateArchive);
+```
+
+次のように出力されます。
+
+<pre>
+array(3) {
+  [0]=>
+  array(2) {
+    ["name"]=>
+    string(7) "2025年"
+    ["link"]=>
+    string(27) "http://localhost:5520/2025/"
+  }
+  [1]=>
+  array(2) {
+    ["name"]=>
+    string(11) "2025年6月"
+    ["link"]=>
+    string(30) "http://localhost:5520/2025/06/"
+  }
+  [2]=>
+  array(2) {
+    ["name"]=>
+    string(16) "2025年6月13日"
+    ["link"]=>
+    string(33) "http://localhost:5520/2025/06/13/"
+  }
+}
+</pre>
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
