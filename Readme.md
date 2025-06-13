@@ -776,6 +776,188 @@ $parentCategories = ParentData::nowPageParentCategoriesGet();
 
 デフォルトは「false」です。
 
+#### サンプルコード
+
+```php
+if(is_page()){
+    $fixedPageObject = get_queried_object();
+    $parentPage = ParentData::fixedPageParentGet($fixedPageObject, true);
+    var_dump($parentPage);
+}
+```
+
+次のように出力されます。
+
+<pre>
+array(3) {
+  [0]=>
+  object(WP_Post)#1300 (24) {
+    ["ID"]=>
+    int(2116)
+    ["post_author"]=>
+    string(1) "1"
+    ["post_date"]=>
+    string(19) "2025-06-13 12:48:07"
+    ["post_date_gmt"]=>
+    string(19) "2025-06-13 03:48:07"
+    ["post_content"]=>
+    string(64) "
+テキスト
+
+
+"
+    ["post_title"]=>
+    string(19) "テストページ1"
+    ["post_excerpt"]=>
+    string(0) ""
+    ["post_status"]=>
+    string(7) "publish"
+    ["comment_status"]=>
+    string(6) "closed"
+    ["ping_status"]=>
+    string(6) "closed"
+    ["post_password"]=>
+    string(0) ""
+    ["post_name"]=>
+    string(55) "%e3%83%86%e3%82%b9%e3%83%88%e3%83%9a%e3%83%bc%e3%82%b81"
+    ["to_ping"]=>
+    string(0) ""
+    ["pinged"]=>
+    string(0) ""
+    ["post_modified"]=>
+    string(19) "2025-06-13 12:48:07"
+    ["post_modified_gmt"]=>
+    string(19) "2025-06-13 03:48:07"
+    ["post_content_filtered"]=>
+    string(0) ""
+    ["post_parent"]=>
+    int(0)
+    ["guid"]=>
+    string(35) "http://localhost:5520/?page_id=2116"
+    ["menu_order"]=>
+    int(0)
+    ["post_type"]=>
+    string(4) "page"
+    ["post_mime_type"]=>
+    string(0) ""
+    ["comment_count"]=>
+    string(1) "0"
+    ["filter"]=>
+    string(3) "raw"
+  }
+  [1]=>
+  object(WP_Post)#1009 (24) {
+    ["ID"]=>
+    int(2118)
+    ["post_author"]=>
+    string(1) "1"
+    ["post_date"]=>
+    string(19) "2025-06-13 12:48:36"
+    ["post_date_gmt"]=>
+    string(19) "2025-06-13 03:48:36"
+    ["post_content"]=>
+    string(64) "
+テキスト
+
+
+"
+    ["post_title"]=>
+    string(21) "テストページ1-1"
+    ["post_excerpt"]=>
+    string(0) ""
+    ["post_status"]=>
+    string(7) "publish"
+    ["comment_status"]=>
+    string(6) "closed"
+    ["ping_status"]=>
+    string(6) "closed"
+    ["post_password"]=>
+    string(0) ""
+    ["post_name"]=>
+    string(57) "%e3%83%86%e3%82%b9%e3%83%88%e3%83%9a%e3%83%bc%e3%82%b81-1"
+    ["to_ping"]=>
+    string(0) ""
+    ["pinged"]=>
+    string(0) ""
+    ["post_modified"]=>
+    string(19) "2025-06-13 12:48:36"
+    ["post_modified_gmt"]=>
+    string(19) "2025-06-13 03:48:36"
+    ["post_content_filtered"]=>
+    string(0) ""
+    ["post_parent"]=>
+    int(2116)
+    ["guid"]=>
+    string(35) "http://localhost:5520/?page_id=2118"
+    ["menu_order"]=>
+    int(0)
+    ["post_type"]=>
+    string(4) "page"
+    ["post_mime_type"]=>
+    string(0) ""
+    ["comment_count"]=>
+    string(1) "0"
+    ["filter"]=>
+    string(3) "raw"
+  }
+  [2]=>
+  object(WP_Post)#755 (24) {
+    ["ID"]=>
+    int(2120)
+    ["post_author"]=>
+    string(1) "1"
+    ["post_date"]=>
+    string(19) "2025-06-13 12:48:57"
+    ["post_date_gmt"]=>
+    string(19) "2025-06-13 03:48:57"
+    ["post_content"]=>
+    string(64) "
+テキスト
+
+
+"
+    ["post_title"]=>
+    string(23) "テストページ1-1-1"
+    ["post_excerpt"]=>
+    string(0) ""
+    ["post_status"]=>
+    string(7) "publish"
+    ["comment_status"]=>
+    string(6) "closed"
+    ["ping_status"]=>
+    string(6) "closed"
+    ["post_password"]=>
+    string(0) ""
+    ["post_name"]=>
+    string(59) "%e3%83%86%e3%82%b9%e3%83%88%e3%83%9a%e3%83%bc%e3%82%b81-1-1"
+    ["to_ping"]=>
+    string(0) ""
+    ["pinged"]=>
+    string(0) ""
+    ["post_modified"]=>
+    string(19) "2025-06-13 12:48:57"
+    ["post_modified_gmt"]=>
+    string(19) "2025-06-13 03:48:57"
+    ["post_content_filtered"]=>
+    string(0) ""
+    ["post_parent"]=>
+    int(2118)
+    ["guid"]=>
+    string(35) "http://localhost:5520/?page_id=2120"
+    ["menu_order"]=>
+    int(0)
+    ["post_type"]=>
+    string(4) "page"
+    ["post_mime_type"]=>
+    string(0) ""
+    ["comment_count"]=>
+    string(1) "0"
+    ["filter"]=>
+    string(3) "raw"
+  }
+}
+</pre>
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
