@@ -958,6 +958,12 @@ array(3) {
 }
 </pre>
 
+### nowPageDateArchiveGet(string $yearFormat="Y", string $monthFormat="Y/n", string $dayFormat="Y/n/j", string $nameKey="name", string $linkKey="link", string $howFar="m"): array
+
+現在のぺージの親に相当する、年別、月別、日別のアーカイブを取得します。
+
+現在のページが投稿ページ、月別、日別のアーカイブの場合に機能し、それ以外は空の配列を返します。
+
 ## ライセンスについて
 
 このパッケージは、GPL 2.0 (GNU GENERAL PUBLIC LICENSE 2.0)として作成されています。
