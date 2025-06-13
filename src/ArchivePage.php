@@ -347,6 +347,15 @@ class ArchivePage
         return self::dateArchiveUrlGetSystem($data, $type, $format);
     }
 
+    /**
+     * 日付から、アーカイブページへのURLを取得します
+     * @param int $year ここには、年を数字で渡してください。
+     * @param int $month ここには、月を数字で渡してください。
+     * @param int $day ここには、日を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @param string $howFar ここには、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月までとなります。
+     * @return string
+     */
     public static function dateArchiveUrlGet(int $year,int $month,int $day,string $postType="",string $howFar="d"): string
     {
         // 日付からアーカイブページへのリンクを取得
@@ -372,16 +381,35 @@ class ArchivePage
         return $result;
     }
 
+    /**
+     * 月から、アーカイブページへのURLを取得します。
+     * @param int $year ここには、年を数字で渡してください。
+     * @param int $month ここには、月を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @return string
+     */
     public static function monthArchiveUrlGet(int $year,int $month,string $postType=""): string
     {
         return self::dateArchiveUrlGet($year, $month, 0, $postType, "m");
     }
 
+    /**
+     * 年から、アーカイブページへのURLを取得します。
+     * @param int $year ここには、年を数字で渡してください。
+     * @param string $postType ここには、投稿タイプのスラッグを文字列で渡してください。
+     * @return string
+     */
     public static function yearArchiveUrlGet(int $year,string $postType=""): string
     {
         return self::dateArchiveUrlGet($year, 0, 0, $postType, "y");
     }
 
+    /**
+     * 現在の記事に対応する日別アーカイブのURLを取得します。
+     *
+     * @param string $howFar ここには、どこまで取得するかを渡してください。「y」の場合は年まで、「m」の場合は月までとなります。
+     * @return string
+     */
     public static function nowPageDateArchiveUrlGet(string $howFar="d"): string
     {
         // 現在の記事に対応する日別アーカイブのURLを取得
@@ -406,11 +434,21 @@ class ArchivePage
         return self::dateArchiveUrlGet($year, $month, $day, $postType, $howFar);
     }
 
+    /**
+     * 現在の記事に対応する月別アーカイブのURLを取得します。
+     *
+     * @return string
+     */
     public static function nowPageMonthArchiveUrlGet(): string
     {
         return self::nowPageDateArchiveUrlGet("m");
     }
 
+    /**
+     * 現在の記事に対応する年別アーカイブのURLを取得します。
+     *
+     * @return string
+     */
     public static function nowPageYearArchiveUrlGet(): string
     {
         return self::nowPageDateArchiveUrlGet("y");
