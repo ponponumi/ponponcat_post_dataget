@@ -48,6 +48,10 @@ class TopPage
         }
     }
 
+    /**
+     * 投稿ページのトップページのタイトルを取得します。トップページの設定が「固定ページ」なら投稿ページのトップページのタイトルを、「最新の投稿」なら空の文字列を返します。
+     * @return string
+     */
     public static function postTopPageTitleGet(): string
     {
         // 投稿ページのトップページのタイトルを取得する
