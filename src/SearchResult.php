@@ -4,7 +4,7 @@ namespace Ponponumi\PonponcatPostDataget;
 
 class SearchResult
 {
-    public static function word(bool $escMode=true): string
+    public static function wordGet(bool $escMode=true): string
     {
         $word = get_search_query(false);
 
