@@ -20,4 +20,16 @@ class SearchResult
     {
         echo self::wordGet();
     }
+
+    public static function titleGet(string $leftAdd="", string $rightAdd="", bool $escMode=true): string
+    {
+        $word = self::wordGet(false);
+        $word = $leftAdd . $word . $rightAdd;
+
+        if($escMode){
+            $word = htmlspecialchars($word, ENT_QUOTES);
+        }
+
+        return $word;
+    }
 }
