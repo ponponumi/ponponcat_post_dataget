@@ -15,4 +15,9 @@ class SearchResult
 
         return $word;
     }
+
+    public static function word(): void
+    {
+        echo self::wordGet();
+    }
 }
