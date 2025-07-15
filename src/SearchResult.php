@@ -32,4 +32,9 @@ class SearchResult
 
         return $word;
     }
+
+    public static function title(string $leftAdd="", string $rightAdd=""): void
+    {
+        echo self::titleGet($leftAdd, $rightAdd);
+    }
 }
