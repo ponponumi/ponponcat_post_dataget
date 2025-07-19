@@ -47,4 +47,20 @@ class TopPage
             return get_permalink(get_option("page_for_posts"));
         }
     }
+
+    /**
+     * 投稿ページのトップページのタイトルを取得します。トップページの設定が「固定ページ」なら投稿ページのトップページのタイトルを、「最新の投稿」なら空の文字列を返します。
+     * @return string
+     */
+    public static function postTopPageTitleGet(): string
+    {
+        // 投稿ページのトップページのタイトルを取得する
+        if(self::settingIsNewPost()){
+            // 最新の投稿なら
+            return "";
+        }else{
+            // 固定ページなら
+            return get_the_title(get_option("page_for_posts"));
+        }
+    }
 }
