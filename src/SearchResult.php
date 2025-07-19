@@ -6,6 +6,10 @@ class SearchResult
 {
     public static function wordGet(bool $escMode=true): string
     {
+        if(!is_search()){
+            return "";
+        }
+
         $word = get_search_query(false);
 
         if($escMode){
