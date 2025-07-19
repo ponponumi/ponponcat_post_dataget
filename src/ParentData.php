@@ -156,7 +156,8 @@ class ParentData
         string $dayFormat="Y/n/j",
         string $nameKey="name",
         string $linkKey="link",
-        string $howFar="m"
+        string $howFar="m",
+        bool $escMode=false
     ): array
     {
         // 現在のぺージの親に相当する、年別、月別、日別のアーカイブを取得
