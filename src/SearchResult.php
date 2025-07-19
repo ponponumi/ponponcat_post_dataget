@@ -36,6 +36,14 @@ class SearchResult
         echo self::wordGet();
     }
 
+    /**
+     * 検索結果ページのタイトルを取得します。
+     *
+     * @param string $leftAdd 左側に追加します。「こんにちは」と検索し、「ワード: こんにちは の検索結果」としたい場合、ここには「ワード: 」と渡してください。
+     * @param string $rightAdd 右側に追加します。「こんにちは」と検索し、「ワード: こんにちは の検索結果」としたい場合、ここには「 の検索結果」と渡してください。
+     * @param bool $escMode htmlspecialchars関数で、エスケープするかどうかを選びます。
+     * @return string
+     */
     public static function titleGet(string $leftAdd="", string $rightAdd="", bool $escMode=true): string
     {
         if(!is_search()){
