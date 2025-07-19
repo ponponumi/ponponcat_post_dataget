@@ -209,4 +209,13 @@ class ParentData
 
         return $result;
     }
+
+    private static function esc(string $string,bool $esc): string
+    {
+        if($esc){
+            $string = htmlspecialchars($string, ENT_QUOTES);
+        }
+
+        return $string;
+    }
 }
