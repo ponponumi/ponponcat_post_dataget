@@ -20,6 +20,10 @@
                 <td><?php var_dump(\Ponponumi\PonponcatPostDataget\TopPage::postTopPageUrlGet()) ?></td>
             </tr>
             <tr>
+                <td>ブログのトップページのタイトル</td>
+                <td><?php var_dump(\Ponponumi\PonponcatPostDataget\TopPage::postTopPageTitleGet()) ?></td>
+            </tr>
+            <tr>
                 <td>現在の投稿タイプの名前</td>
                 <td><?php var_dump(\Ponponumi\PonponcatPostDataget\ArchivePage::postTypeGet()) ?></td>
             </tr>
