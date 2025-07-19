@@ -60,6 +60,13 @@ class SearchResult
         return $word;
     }
 
+    /**
+     * 検索結果ページのタイトルを出力します。
+     *
+     * @param string $leftAdd 左側に追加します。「こんにちは」と検索し、「ワード: こんにちは の検索結果」としたい場合、ここには「ワード: 」と渡してください。
+     * @param string $rightAdd 右側に追加します。「こんにちは」と検索し、「ワード: こんにちは の検索結果」としたい場合、ここには「 の検索結果」と渡してください。
+     * @return void
+     */
     public static function title(string $leftAdd="", string $rightAdd=""): void
     {
         echo self::titleGet($leftAdd, $rightAdd);
