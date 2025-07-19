@@ -958,7 +958,7 @@ array(3) {
 }
 </pre>
 
-### nowPageDateArchiveGet(string $yearFormat="Y", string $monthFormat="Y/n", string $dayFormat="Y/n/j", string $nameKey="name", string $linkKey="link", string $howFar="m"): array
+### nowPageDateArchiveGet(string $yearFormat="Y", string $monthFormat="Y/n", string $dayFormat="Y/n/j", string $nameKey="name", string $linkKey="link", string $howFar="m", bool $escMode=false): array
 
 現在のぺージの親に相当する、年別、月別、日別のアーカイブを取得します。
 
@@ -1001,6 +1001,12 @@ array(3) {
 ここには、現在のページが投稿ページの場合、どこまで取得するかを渡してください。
 
 「y」の場合は年まで、「m」の場合は月まで、「d」の場合は日付までとなります。
+
+##### bool $escMode=false
+
+ここには、htmlspecialchars関数に通すかどうかを渡してください。
+
+trueの場合は通し、falseの場合は通しません。
 
 #### サンプルコード
 
