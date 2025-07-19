@@ -14,6 +14,10 @@
             <td>検索ワード</td>
             <td><?php \Ponponumi\PonponcatPostDataget\SearchResult::word() ?></td>
         </tr>
+        <tr>
+            <td>検索ワード(タイトル向け)</td>
+            <td><?php \Ponponumi\PonponcatPostDataget\SearchResult::title("ワード: ", " の検索結果") ?></td>
+        </tr>
     </tbody>
 </table>
 
