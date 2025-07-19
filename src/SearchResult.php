@@ -26,6 +26,11 @@ class SearchResult
         return $word;
     }
 
+    /**
+     * 検索ワードを出力します。
+     *
+     * @return void
+     */
     public static function word(): void
     {
         echo self::wordGet();
