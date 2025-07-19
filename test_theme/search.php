@@ -10,7 +10,10 @@
         </tr>
     </thead>
     <tbody>
-        <!--  -->
+        <tr>
+            <td>検索ワード</td>
+            <td><?php \Ponponumi\PonponcatPostDataget\SearchResult::word() ?></td>
+        </tr>
     </tbody>
 </table>
 
