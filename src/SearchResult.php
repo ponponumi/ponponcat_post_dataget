@@ -23,6 +23,10 @@ class SearchResult
 
     public static function titleGet(string $leftAdd="", string $rightAdd="", bool $escMode=true): string
     {
+        if(!is_search()){
+            return "";
+        }
+
         $word = self::wordGet(false);
         $word = $leftAdd . $word . $rightAdd;
 
