@@ -180,6 +180,29 @@
                     )) ?></pre>
                 </td>
             </tr>
+            <tr>
+                <td>現在のページの親の時期別アーカイブ(日まで、ここではエスケープするテスト)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+                        howFar: "d",
+                        yearFormat: "Y年>>",
+                        monthFormat: "Y年n月>>",
+                        dayFormat: "Y年n月j日>>",
+                        escMode: true
+                    )) ?></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>現在のページの親の時期別アーカイブ(日まで、ここではエスケープしないテスト)</td>
+                <td>
+                    <pre><?php var_dump(\Ponponumi\PonponcatPostDataget\ParentData::nowPageDateArchiveGet(
+                        howFar: "d",
+                        yearFormat: "Y年>>",
+                        monthFormat: "Y年n月>>",
+                        dayFormat: "Y年n月j日>>"
+                    )) ?></pre>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
