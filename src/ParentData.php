@@ -167,8 +167,8 @@ class ParentData
         if(is_single()){
             // 記事ページであれば
             $result[] = [
-                $nameKey => get_the_date($yearFormat),
-                $linkKey => ArchivePage::nowPageYearArchiveUrlGet(),
+                $nameKey => self::esc(get_the_date($yearFormat), $escMode),
+                $linkKey => self::esc(ArchivePage::nowPageYearArchiveUrlGet(), $escMode),
             ];
 
             if($howFar === "y"){
@@ -176,8 +176,8 @@ class ParentData
             }
 
             $result[] = [
-                $nameKey => get_the_date($monthFormat),
-                $linkKey => ArchivePage::nowPageMonthArchiveUrlGet(),
+                $nameKey => self::esc(get_the_date($monthFormat), $escMode),
+                $linkKey => self::esc(ArchivePage::nowPageMonthArchiveUrlGet(), $escMode),
             ];
 
             if($howFar === "m"){
@@ -185,25 +185,25 @@ class ParentData
             }
 
             $result[] = [
-                $nameKey => get_the_date($dayFormat),
-                $linkKey => ArchivePage::nowPageDateArchiveUrlGet(),
+                $nameKey => self::esc(get_the_date($dayFormat), $escMode),
+                $linkKey => self::esc(ArchivePage::nowPageDateArchiveUrlGet(), $escMode),
             ];
         }elseif(is_month()){
             // 月別アーカイブであれば
             $result[] = [
-                $nameKey => get_the_date($yearFormat),
-                $linkKey => ArchivePage::nowPageYearArchiveUrlGet(),
+                $nameKey => self::esc(get_the_date($yearFormat), $escMode),
+                $linkKey => self::esc(ArchivePage::nowPageYearArchiveUrlGet(), $escMode),
             ];
         }elseif(is_day()){
             // 日別アーカイブであれば
             $result[] = [
-                $nameKey => get_the_date($yearFormat),
-                $linkKey => ArchivePage::nowPageYearArchiveUrlGet(),
+                $nameKey => self::esc(get_the_date($yearFormat), $escMode),
+                $linkKey => self::esc(ArchivePage::nowPageYearArchiveUrlGet(), $escMode),
             ];
 
             $result[] = [
-                $nameKey => get_the_date($monthFormat),
-                $linkKey => ArchivePage::nowPageMonthArchiveUrlGet(),
+                $nameKey => self::esc(get_the_date($monthFormat), $escMode),
+                $linkKey => self::esc(ArchivePage::nowPageMonthArchiveUrlGet(), $escMode),
             ];
         }
 
