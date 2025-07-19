@@ -8,6 +8,14 @@
         </thead>
         <tbody>
             <tr>
+                <td>検索ワード</td>
+                <td><?php var_dump(\Ponponumi\PonponcatPostDataget\SearchResult::wordGet()) ?></td>
+            </tr>
+            <tr>
+                <td>検索ワード(タイトル向け)</td>
+                <td><?php var_dump(\Ponponumi\PonponcatPostDataget\SearchResult::titleGet("ワード: ", " の検索結果")) ?></td>
+            </tr>
+            <tr>
                 <td>トップページが「最新の投稿」かどうか</td>
                 <td><?php var_dump(\Ponponumi\PonponcatPostDataget\TopPage::settingIsNewPost()) ?></td>
             </tr>

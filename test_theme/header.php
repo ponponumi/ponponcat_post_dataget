@@ -6,4 +6,5 @@
     <title>テスト</title>
 </head>
 <body>
+    <?php get_search_form() ?>
     <div>
